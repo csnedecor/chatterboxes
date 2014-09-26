@@ -1,0 +1,58 @@
+	<footer class="footer">
+		<div class="row">
+			<div class="medium-5 medium-offset-1 large-5 large-offset-1 columns">
+				<h3>connect with us</h3>
+
+				<p>Cras sit amet viverra diam. Sed sit amet nunc non ligula dictum rutrum. Praesent justo tortor</p>
+
+				<div class="socials">
+					<ul>
+						<li>
+							<a href="#" class="link-facebook">facebook</a>
+						</li>
+						
+						<li>
+							<a href="#" class="link-twitter">twitter</a>
+						</li>
+						
+						<li>
+							<a href="#" class="link-pinterest">pinterest</a>
+						</li>
+						
+						<li>
+							<a href="#" class="link-bing">bing</a>
+						</li>
+					</ul>
+				</div><!-- /.socials -->
+			</div><!-- /.medium-5 medium-offset-1 large-5 large-offset-1 columns -->
+			
+			<div class="medium-6 large-6 columns">
+				<h3>subscribe to our newsletter</h3>
+
+				<p>Cras sit amet viverra diam. Sed sit amet nunc non ligula dictum </p>
+
+				<div class="subscribe">
+				    <form action="" method="post">
+				        <label for="mail" class="hidden">Email</label>
+
+				        <input type="text" placeholder="Enter email" class="subscribe-field" id="mail" />
+
+				        <input type="submit" value="Subscribe" class="subscribe-btn" />
+				    </form>
+				</div><!-- /.subscribe -->
+			</div><!-- /.medium-6 large-6 columns -->
+		</div><!-- /.row -->
+
+		<div class="row">
+			<div class="medium-12 large-12 columns">
+				<p class="copyright">&copy;2008 Chatterboxes, LLC, All rights reserved.</p><!-- /.copyright -->
+			</div><!-- /.medium-12 large-12 columns -->
+		</div><!-- /.row -->
+
+		<div class="footer-background">
+			<img src="css/images/footer.png" height="260" width="1600" alt="" />
+		</div><!-- /.footer-background -->
+	</footer><!-- /.footer -->
+</div><!-- /.wrapper -->
+</body>
+</html>
