@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'shotgun' if development?
 
 get '/' do
   erb :home, layout: :application
