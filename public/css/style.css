@@ -142,7 +142,7 @@ p { margin: 0; }
 	#Intro
 ========================================================================== */
 .intro { position: relative; }
-.intro-image { height: 286px; }
+.intro-image { height: 500px; }
 
 .intro-content { position: absolute; top: 0; left: 0; width: 100%; padding-top: 132px; }
 .intro-content h1 { font-family: 'Museo', sans-serif; font-size: 78px; color: #fff; font-weight: 700; text-align: center; }
