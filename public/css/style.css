@@ -426,6 +426,12 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-testimonial-small .slider-prev:hover,
 .slider-testimonial-small .slider-next:hover { opacity: 0.8; }
 
+.slide-image img {
+	border-radius: 50%;
+	height: 174px;
+	width: 174px;
+}
+
 /* ==========================================================================
 	#Section Team
 ========================================================================== */

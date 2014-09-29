@@ -35,6 +35,37 @@
 			}
 		});
 
+		// Home Page to Links to Accordion Tabs
+		// var htmlID;
+		// if(htmlID !== null){
+		// 	$(htmlID).trigger('click');
+		// }
+
+		// $('.therapy-items').on('click', 'a', function(event){
+		// 	event.preventDefault();
+
+		// 	console.log('Click registered!');
+
+		// 	console.log(event.currentTarget);
+			
+		// 	var fullPath = $(event.currentTarget).attr('href');
+		// 	console.log('Path is: ' + fullPath);
+
+		// 	var index = fullPath.indexOf('#');
+		// 	console.log('Index is: ' + index);
+
+		// 	htmlID = fullPath.substring(index);
+		// 	console.log('HTML ID is: ' + htmlID);
+
+		// 	var shortPath = fullPath.substring(1, index);
+		// 	console.log('Short path is: ' + shortPath);
+
+		// 	window.location.pathname = shortPath;
+		//  Need a way to pass param to URL:  encodeURI and encodeURIComponent are not working
+		// 	Would then need a regexp to parse the window.location.href, grab the param, and trigger the JQuery below
+
+		// });
+
 		// Accordion Therapy
 		(function(){
 			// This class will be added to the expanded item
