@@ -1,3 +1,3 @@
 require './chatterboxes'
 
-run Sinatra::Application
+run Chatterboxes

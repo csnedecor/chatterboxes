@@ -16,7 +16,7 @@ get '/contact' do
   erb :contact, layout: :application
 end
 
-get 'services' do
+get '/services' do
   erb :services, layout: :application
 end
 
