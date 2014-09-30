@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'dotenv'
 require 'pony'
+require 'mailchimp'
+require 'gibbon'
+
 Dotenv.load
 
 def mail_to(recipient, name, email, phone)
@@ -22,12 +25,32 @@ def mail_to(recipient, name, email, phone)
   })
 end
 
+def subscribe_to_mail_chimp(email)
+  gibbon = Gibbon::API.new
+  gibbon.lists.subscribe({
+    :id => ENV['MAILCHIMP_LIST_ID'], 
+    :email => { :email => email },
+    :double_optin => true 
+  })
+rescue Gibbon::MailChimpError => error
+  puts error.message
+  puts "Error code is: #{error.code}"
+  redirect '/home'
+  @error_message = error.message
+end
+
 get '/' do
   redirect '/home'
 end
 
 get '/home' do
   erb :home, layout: :application
+end
+
+post '/mailchimp' do
+  @email = params[:email]
+  subscribe_to_mail_chimp(@email)
+  redirect '/home'
 end
 
 post '/home' do
