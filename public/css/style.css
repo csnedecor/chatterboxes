@@ -142,9 +142,9 @@ p { margin: 0; }
 	#Intro
 ========================================================================== */
 .intro { position: relative; }
-.intro-image { height: 450px; }
+.intro-image { height: 675px; }
 
-.intro-content { position: absolute; top: 0; left: 0; width: 100%; padding-top: 132px; }
+.intro-content { position: absolute; top: 125px; left: 0; width: 100%; padding-top: 132px; }
 .intro-content h1 { font-family: 'Museo', sans-serif; font-size: 78px; color: #fff; font-weight: 700; text-align: center; }
 
 /* ==========================================================================
@@ -430,6 +430,11 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 	border-radius: 50%;
 	height: 174px;
 	width: 174px;
+}
+
+.staff-bio img {
+	height: 312px;
+	width: 205px;
 }
 
 /* ==========================================================================

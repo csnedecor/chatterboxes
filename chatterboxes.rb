@@ -6,13 +6,21 @@ require 'gibbon'
 
 Dotenv.load
 
-def mail_to(recipient, name, email, phone)
+def send_mail(name, email, phone, message=nil)
+  if message == nil
+    erb_template = :contact_email
+    body = "Hey Brittany,\n\t#{name} is interested in an appointment Chatterboxes.  They can be reached via email at #{email} or by phone at #{phone}."
+  else
+    erb_template = :message_email
+    body = "Hey Brittany,\n\t New message from #{name}:  \n #{message} \n They can be reached via email at #{email} or by phone at #{phone}."
+  end
+
   Pony.mail({
-    to: recipient,
+    to: "murphydbuffalo@gmail.com",
     from: "Web-Services@teamchatterboxes.com",
     subject: "Someone is interested in an appointment at Chatterboxes!",
-    html_body: erb(:email),
-    body: "Hey Brittany,\n\t#{name} is interested in Chatterboxes!  They can be reached via email at #{email} or by phone at #{phone}.",
+    html_body: erb(erb_template),
+    body: body,
     via: :smtp,
     via_options: {
       :address        => 'smtp.mandrillapp.com',
@@ -53,12 +61,18 @@ post '/mailchimp' do
   redirect '/home'
 end
 
-post '/home' do
-  @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
+post '/contact' do
+  if params[:last_name] != nil
+    @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
+  else
+    @full_name = "#{params[:first_name].capitalize}"
+  end
+
   @phone = params[:phone]
   @email = params[:email]
+  @message = params[:message]
 
-  mail_to("murphydbuffalo@gmail.com", @full_name, @email, @phone)
+  send_mail(@full_name, @email, @phone, @message)
 
   redirect '/home'
 end
