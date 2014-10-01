@@ -35,6 +35,47 @@
 			}
 		});
 
+		// Slider Bios
+		var $prev = $('.slider-prev');
+		var $next = $('.slider-next');
+
+		$prev.hide();
+
+		$next.click(function(event){
+			event.preventDefault();
+
+			var $currentBio = $('.section-current');
+
+			$currentBio.removeClass('section-current').addClass('section-hidden');
+			$currentBio.next().removeClass('section-hidden').addClass('section-current');
+
+			if( !$('.bio-paragraphs .section').first().hasClass('section-current') ){
+				$prev.show();
+			}
+
+			if( $('.bio-paragraphs .section').last().hasClass('section-current') ){
+				$next.hide();
+			}
+
+		});
+
+		$prev.click(function(event){
+			event.preventDefault();
+
+			var $currentBio = $('.section-current');
+			
+			$currentBio.removeClass('section-current').addClass('section-hidden');
+			$currentBio.prev().removeClass('section-hidden').addClass('section-current');
+
+			if( $('.bio-paragraphs .section').first().hasClass('section-current') ){
+				$prev.hide();
+			}
+
+			if( !$('.bio-paragraphs .section').last().hasClass('section-current') ){
+				$next.show();
+			}
+		});
+
 		// Home Page to Links to Accordion Tabs
 		// var htmlID;
 		// if(htmlID !== null){

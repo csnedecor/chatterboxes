@@ -178,18 +178,18 @@ p { margin: 0; }
 .footer .socials .link-bing { background-position: -696px -301px; }
 
 .contacts .socials,
-.section-director .socials { display: block; float: none; }
+.section-current .socials { display: block; float: none; }
 .contacts .socials a,
-.section-director .socials a { width: 34px; height: 34px; }
+.section-current .socials a { width: 34px; height: 34px; }
 .contacts .socials .link-facebook,
-.section-director .socials .link-facebook { background-position: -455px -374px; }
+.section-current .socials .link-facebook { background-position: -455px -374px; }
 .contacts .socials .link-rss,
-.section-director .socials .link-rss { background-position: -496px -374px; }
+.section-current .socials .link-rss { background-position: -496px -374px; }
 .contacts .socials .link-linkedin,
-.section-director .socials .link-linkedin { background-position: -656px -374px; }
-.section-director .socials .link-twitter { background-position: -455px -411px; }
+.section-current .socials .link-linkedin { background-position: -656px -374px; }
+.section-current .socials .link-twitter { background-position: -455px -411px; }
 
-.section-director .socials li ~ li { margin-left: 6px; }
+.section-current .socials li ~ li { margin-left: 6px; }
 
 /* ==========================================================================
 	#Section Schedule
@@ -437,6 +437,10 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 	width: 205px;
 }
 
+.staff-hidden {
+	display: none;
+}
+
 /* ==========================================================================
 	#Section Team
 ========================================================================== */
@@ -466,22 +470,24 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-team .slider-next { right: 24px; background-position: -222px -275px; }
 
 /* ==========================================================================
-	#Section Director
+	#Team Slider Current Section & Hidden Sections
 ========================================================================== */
-.section-director { padding-bottom: 74px; border-bottom: 1px solid #fff; }
-.section-director .section-body { text-align: center; }
-.section-director .section-inner { display: inline-block; width: 1081px; padding: 44px 40px 37px; border-radius: 6px; border: 1px solid #fff; background: #eaeaea; text-align: left; }
-.section-director h4,
-.section-director .section-inner > span { font-family: 'Museo', sans-serif; color: #4f4f4f; }
-.section-director h4 { margin-bottom: 6px; font-size: 21px; text-transform: uppercase; }
-.section-director .section-inner > span { display: block; margin-bottom: 18px; font-size: 16px; }
+.section-current { padding-bottom: 74px; border-bottom: 1px solid #fff; }
+.section-current .section-body { text-align: center; }
+.section-current .section-inner { display: inline-block; width: 1081px; padding: 44px 40px 37px; border-radius: 6px; border: 1px solid #fff; background: #eaeaea; text-align: left; }
+.section-current h4,
+.section-current .section-inner > span { font-family: 'Museo', sans-serif; color: #4f4f4f; }
+.section-current h4 { margin-bottom: 6px; font-size: 21px; text-transform: uppercase; }
+.section-current .section-inner > span { display: block; margin-bottom: 18px; font-size: 16px; }
 
-.section-director p { font-family: 'Lato', sans-serif; font-size: 18px; line-height: 1.56; color: #4f4f4f; }
-.section-director p ~ p { margin-top: 28px; }
-.section-director p a,
-.section-director p span { color: #29a8e1; }
-.section-director p a:hover { text-decoration: underline; }
-.section-director .socials { margin-bottom: 37px; }
+.section-current p { font-family: 'Lato', sans-serif; font-size: 18px; line-height: 1.56; color: #4f4f4f; }
+.section-current p ~ p { margin-top: 28px; }
+.section-current p a,
+.section-current p span { color: #29a8e1; }
+.section-current p a:hover { text-decoration: underline; }
+.section-current .socials { margin-bottom: 37px; }
+
+.section-hidden { display: none; }
 
 /* ==========================================================================
 	#Section-office
