@@ -46,8 +46,8 @@
 
 			var $currentBio = $('.section-current');
 
-			$currentBio.removeClass('section-current').addClass('section-hidden');
-			$currentBio.next().removeClass('section-hidden').addClass('section-current');
+			$currentBio.removeClass('section-current').addClass('section-hidden').hide();
+			$currentBio.next().fadeIn('slow').removeClass('section-hidden').addClass('section-current');
 
 			if( !$('.bio-paragraphs .section').first().hasClass('section-current') ){
 				$prev.show();
@@ -64,8 +64,8 @@
 
 			var $currentBio = $('.section-current');
 			
-			$currentBio.removeClass('section-current').addClass('section-hidden');
-			$currentBio.prev().removeClass('section-hidden').addClass('section-current');
+			$currentBio.removeClass('section-current').addClass('section-hidden').hide();
+			$currentBio.prev().fadeIn('slow').removeClass('section-hidden').addClass('section-current');
 
 			if( $('.bio-paragraphs .section').first().hasClass('section-current') ){
 				$prev.hide();
