@@ -38,10 +38,10 @@
 		// Slider Bios
 		function changeBio(direction){
 			var $currentBio = $('.section-current');
-			
+
 			$currentBio.removeClass('section-current').addClass('section-hidden').hide();
 	
-			if(direction === 'next'){
+			if(direction === 'forward'){
 
 					$currentBio.next().fadeIn('slow').removeClass('section-hidden').addClass('section-current');
 					$currentBio.detach().appendTo('.bio-paragraphs');
@@ -60,14 +60,14 @@
 			var $currentImage = $('.slider-team').find('.current');
 			var $lastSlide = $('.slider-team').find('.slide').last();
 
-			if(direction === 'next'){
+			if(direction === 'forward'){
 
 				$currentImage.removeClass('current').addClass('staff-hidden');
 				$currentImage.next().addClass('current');
 				$currentImage.fadeOut().detach().appendTo('.slides');
 				$lastSlide.prev().removeClass('staff-hidden');
 
-				changeBio('next');
+				changeBio('forward');
 
 			} else {
 					var $teamSlides = $('.slider-team').find('.slides');
@@ -85,11 +85,11 @@
 		var $next = $('.slider-next');
 
 		$next.click(function(event){
-			changeSlide('next');
+			changeSlide('forward');
 		});
 
 		$prev.click(function(event){
-			changeSlide('previous');
+			changeSlide('backward');
 		});
 
 		// Home Page to Links to Accordion Tabs
