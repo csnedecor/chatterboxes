@@ -9,16 +9,18 @@ Dotenv.load
 def send_mail(name, email, phone, message=nil)
   if message == nil
     erb_template = :contact_email
-    body = "Hey Brittany,\n\t#{name} is interested in an appointment Chatterboxes.  They can be reached via email at #{email} or by phone at #{phone}."
+    body = "Hi Brittany,\n\t#{name} is interested in an appointment Chatterboxes.  They can be reached via email at #{email} or by phone at #{phone}."
   else
     erb_template = :message_email
-    body = "Hey Brittany,\n\t New message from #{name}:  \n #{message} \n They can be reached via email at #{email} or by phone at #{phone}."
+    body = "Hi Brittany,\n\t New message from #{name}:  \n #{message} \n They can be reached via email at #{email} or by phone at #{phone}."
   end
 
   Pony.mail({
-    to: "murphydbuffalo@gmail.com",
+    to: 'brittany@teamchatterboxes.com',
+    cc: 'megan@teamchatterboxes.com',
+    bcc: "murphydbuffalo@gmail.com",
     from: "Web-Services@teamchatterboxes.com",
-    subject: "Someone is interested in an appointment at Chatterboxes!",
+    subject: "New message!",
     html_body: erb(erb_template),
     body: body,
     via: :smtp,
