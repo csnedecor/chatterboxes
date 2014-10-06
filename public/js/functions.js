@@ -36,44 +36,60 @@
 		});
 
 		// Slider Bios
-		var $prev = $('.slider-prev');
-		var $next = $('.slider-next');
-
-		$prev.hide();
-
-		$next.click(function(event){
-			event.preventDefault();
-
-			var $currentBio = $('.section-current');
-
-			$currentBio.removeClass('section-current').addClass('section-hidden').hide();
-			$currentBio.next().fadeIn('slow').removeClass('section-hidden').addClass('section-current');
-
-			if( !$('.bio-paragraphs .section').first().hasClass('section-current') ){
-				$prev.show();
-			}
-
-			if( $('.bio-paragraphs .section').last().hasClass('section-current') ){
-				$next.hide();
-			}
-
-		});
-
-		$prev.click(function(event){
-			event.preventDefault();
-
+		function changeBio(direction){
 			var $currentBio = $('.section-current');
 			
 			$currentBio.removeClass('section-current').addClass('section-hidden').hide();
-			$currentBio.prev().fadeIn('slow').removeClass('section-hidden').addClass('section-current');
+	
+			if(direction === 'next'){
 
-			if( $('.bio-paragraphs .section').first().hasClass('section-current') ){
-				$prev.hide();
-			}
+					$currentBio.next().fadeIn('slow').removeClass('section-hidden').addClass('section-current');
+					$currentBio.detach().appendTo('.bio-paragraphs');
 
-			if( !$('.bio-paragraphs .section').last().hasClass('section-current') ){
-				$next.show();
+			} else {
+
+					$('.bio-paragraphs').find('.section').last()
+						.detach().prependTo('.bio-paragraphs').fadeIn('slow')
+							.removeClass('section-hidden').addClass('section-current');
 			}
+		}
+
+		function changeSlide(direction) {
+			event.preventDefault();
+
+			var $currentImage = $('.slider-team').find('.current');
+			var $lastSlide = $('.slider-team').find('.slide').last();
+
+			if(direction === 'next'){
+
+				$currentImage.removeClass('current').addClass('staff-hidden');
+				$currentImage.next().addClass('current');
+				$currentImage.fadeOut().detach().appendTo('.slides');
+				$lastSlide.prev().removeClass('staff-hidden');
+
+				changeBio('next');
+
+			} else {
+					var $teamSlides = $('.slider-team').find('.slides');
+			
+					// Find the last shown slide and hide it
+					$lastSlide.prev().prev().addClass('staff-hidden');
+					$lastSlide.removeClass('staff-hidden').addClass('current').detach().prependTo($teamSlides);
+					$currentImage.removeClass('current');
+
+					changeBio('previous');
+			}
+		}
+
+		var $prev = $('.slider-prev');
+		var $next = $('.slider-next');
+
+		$next.click(function(event){
+			changeSlide('next');
+		});
+
+		$prev.click(function(event){
+			changeSlide('previous');
 		});
 
 		// Home Page to Links to Accordion Tabs
