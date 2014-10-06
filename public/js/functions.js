@@ -27,6 +27,7 @@
 
 		// Slider Office
 		$('.slider-office .slides').carouFredSel({
+			scroll : { fx : "fade" },
 			pagination: {
 				container: '.slider-office .slider-paging ul',
 				anchorBuilder: function(number) {

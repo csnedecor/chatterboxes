@@ -308,6 +308,21 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-testimonials .slider-paging .current a,
 .slider-testimonials .slider-paging .selected a { background-position: -311px -275px; }
 
+.slider-testimonials .slide-image img {
+	border-radius: 50%;
+	height: 174px;
+	width: 174px;
+}
+
+.staff-bio img {
+	height: 312px;
+	width: 205px;
+}
+
+.staff-hidden {
+	display: none;
+}
+
 .birds-white { position: absolute; top: -6px; left: -37px; }
 
 /* ==========================================================================
@@ -426,21 +441,6 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-testimonial-small .slider-prev:hover,
 .slider-testimonial-small .slider-next:hover { opacity: 0.8; }
 
-.slide-image img {
-	border-radius: 50%;
-	height: 174px;
-	width: 174px;
-}
-
-.staff-bio img {
-	height: 312px;
-	width: 205px;
-}
-
-.staff-hidden {
-	display: none;
-}
-
 /* ==========================================================================
 	#Section Team
 ========================================================================== */
@@ -500,7 +500,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-office { position: relative; display: inline-block; width: 923px; }
 .slider-office .slides { list-style: none outside none; }
 .slider-office .slide { float: left; height: 632px; }
-.slider-office .slider-paging { margin-top: 17px; text-align: right; }
+.slider-office .slider-paging { margin-top: 15px; text-align: right; }
 .slider-office .slider-paging ul { display: inline-block; list-style: none outside none; }
 .slider-office .slider-paging li { float: left; }
 .slider-office .slider-paging li ~ li { margin-left: 4px; }
@@ -509,9 +509,14 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-office .slider-paging .selected a { background-position: -291px -275px; }
 
 .slider-office .slider-images img { position: absolute; }
-.slider-boy { left: -59px; bottom: 35px; }
+.slider-boy { left: -59px; bottom: 95px; }
 .slider-girl { right: -71px; bottom: 65px; }
 
+.slider-office .slide-image img {
+	-webkit-border-radius: 5px;
+	-mox-border-radius: 5px;
+	border-radius: 5px;
+}
 
 /* ==========================================================================
 	#Btns
