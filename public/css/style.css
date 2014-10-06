@@ -308,21 +308,6 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-testimonials .slider-paging .current a,
 .slider-testimonials .slider-paging .selected a { background-position: -311px -275px; }
 
-.slider-testimonials .slide-image img {
-	border-radius: 50%;
-	height: 174px;
-	width: 174px;
-}
-
-.staff-bio img {
-	height: 312px;
-	width: 205px;
-}
-
-.staff-hidden {
-	display: none;
-}
-
 .birds-white { position: absolute; top: -6px; left: -37px; }
 
 /* ==========================================================================
@@ -469,6 +454,22 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 
 .slider-team .slider-prev { left: 5px; background-position: -192px -275px; }
 .slider-team .slider-next { right: 24px; background-position: -222px -275px; }
+
+.slider-team .slide-image img,
+ .slider-team .slide div {
+	-webkit-border-radius: 5px;
+	-mox-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.staff-bio img {
+	height: 312px;
+	width: 205px;
+}
+
+.staff-hidden {
+	display: none;
+}
 
 /* ==========================================================================
 	#Team Slider Current Section & Hidden Sections
