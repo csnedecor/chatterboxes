@@ -308,6 +308,14 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-testimonials .slider-paging .current a,
 .slider-testimonials .slider-paging .selected a { background-position: -311px -275px; }
 
+.slider-testimonials .slide-image img {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	height: 174px;
+	width: 174px;
+}
+
 .birds-white { position: absolute; top: -6px; left: -37px; }
 
 /* ==========================================================================
@@ -458,7 +466,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-team .slide-image img,
  .slider-team .slide div {
 	-webkit-border-radius: 5px;
-	-mox-border-radius: 5px;
+	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
 
@@ -515,7 +523,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 
 .slider-office .slide-image img {
 	-webkit-border-radius: 5px;
-	-mox-border-radius: 5px;
+	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
 
