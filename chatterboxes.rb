@@ -16,9 +16,10 @@ def send_mail(name, email, phone, message=nil)
   end
 
   Pony.mail({
-    to: 'brittany@teamchatterboxes.com',
-    cc: 'megan@teamchatterboxes.com',
-    bcc: "murphydbuffalo@gmail.com",
+    to: 'murphydbuffalo@gmail.com',
+    # to: 'brittany@teamchatterboxes.com',
+    # cc: 'megan@teamchatterboxes.com',
+    # bcc: "murphydbuffalo@gmail.com",
     from: "Web-Services@teamchatterboxes.com",
     subject: "New message!",
     html_body: erb(erb_template),

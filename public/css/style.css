@@ -293,28 +293,27 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-testimonials .slides { list-style: none outside none; }
 .slider-testimonials .slide { float: left; width: 1045px; }
 
-.slider-testimonials .slide-image { float: left; width: 190px; height: 190px; padding: 7px 0 0 7px; margin-right: 50px; background: url(images/sprite.png) no-repeat 0px -209px; }
+.slider-testimonials .slide-image { float: left; width: 200px; height: 255px; 
+	padding: 7px 0 0 7px; margin-right: 50px; -webkit-border-radius: 50%; 
+	-moz-border-radius: 50%; border-radius: 50%; }
+
+/*  background: url(images/sprite.png) no-repeat 0px -209px; */
+
+.slider-testimonials .slide-image img {	max-width: 100%; -webkit-border-radius: 50%;
+	-moz-border-radius: 50%; border-radius: 50%; border: 1px solid white; padding: 1px; }
 .slider-testimonials .slide-content { overflow: hidden; padding-top: 9px; }
 .slider-testimonials .slide-content h5 { margin-bottom: 15px; font-family: 'Overlock', sans-serif; font-size: 25px; color: #fff; font-weight: bold; }
 .slider-testimonials .slide-content p { font-size: 29px; color: #fff; letter-spacing: -0.025em; }
 
 .slider-testimonials .slider-clip { margin-bottom: 45px; }
 
-.slider-testimonials .slider-paging { position: relative; left: -66px; text-align: center; }
+.slider-testimonials .slider-paging { position: relative; bottom: 70px; left: -66px; text-align: center; }
 .slider-testimonials .slider-paging ul { display: inline-block; list-style: none outside none; }
 .slider-testimonials .slider-paging li { float: left; }
 .slider-testimonials .slider-paging li ~ li { margin-left: 3px; }
 .slider-testimonials .slider-paging a { overflow: hidden; display: block; width: 17px; height: 17px; background: url(images/sprite.png) no-repeat -349px -275px; text-indent: 100%; white-space: nowrap; }
 .slider-testimonials .slider-paging .current a,
 .slider-testimonials .slider-paging .selected a { background-position: -311px -275px; }
-
-.slider-testimonials .slide-image img {
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-	height: 174px;
-	width: 174px;
-}
 
 .birds-white { position: absolute; top: -6px; left: -37px; }
 
