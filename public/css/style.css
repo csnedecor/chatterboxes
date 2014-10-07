@@ -505,11 +505,11 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 
 .section-office .section-head { padding: 0 300px; margin-bottom: 44px; }
 .section-office h2 { margin-bottom: 15px; }
-.section-office .section-body { min-height: 575px; }
+.section-office .section-body { min-height: 585px; }
 
 .slider-office { position: relative; display: inline-block; }
 .slider-office .slides { list-style: none outside none; }
-.slider-office .slide { float: left; min-height: 430px; }
+.slider-office .slide { float: left; min-height: 555px; }
 .slider-office .slide img { border: 2px solid black; }
 .slider-office .slider-paging { margin-top: 15px; text-align: right; }
 .slider-office .slider-paging ul { display: inline-block; list-style: none outside none; }
