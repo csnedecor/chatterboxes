@@ -505,7 +505,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 
 .section-office .section-head { padding: 0 300px; margin-bottom: 44px; }
 .section-office h2 { margin-bottom: 15px; }
-.section-office .section-body { min-height: 575px; height: auto; }
+.section-office .section-body { min-height: 575px; }
 
 .slider-office { position: relative; display: inline-block; }
 .slider-office .slides { list-style: none outside none; }

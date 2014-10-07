@@ -136,11 +136,9 @@
 		 
 			$(toggleSelector).on('click', function(e) {
 		 
-				$(this)
-					.next() //  Finds next SIBLING element
-					.slideToggle();
+				$(this).next().slideToggle();
 
-				if($accordionBody.is(":visible")) { // If the body is visible, replace the + with a -
+				if($accordionBody.is(":visible")) {
 					$(this).children('.btn-plus').toggleClass('btn-minus');
 				} 
 
