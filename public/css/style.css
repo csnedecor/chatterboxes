@@ -502,6 +502,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 ========================================================================== */
 .section-office { padding: 54px 0 53px; border-top: 1px solid #e3e2df;
 									text-align: center; }
+									
 .section-office .section-head { padding: 0 300px; margin-bottom: 44px; }
 .section-office h2 { margin-bottom: 15px; }
 .section-office .section-body { min-height: 570px; }
