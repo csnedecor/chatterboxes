@@ -155,7 +155,7 @@ p { margin: 0; }
 /* ==========================================================================
 	#
 ========================================================================== */
-.video img { width: 100%; height: 784px; }
+.video iframe { width: 100%; max-height: 784px; }
 
 /* ==========================================================================
 	#Socials
@@ -293,9 +293,8 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-testimonials .slides { list-style: none outside none; }
 .slider-testimonials .slide { float: left; width: 1045px; }
 
-.slider-testimonials .slide-image { float: left; width: 200px; height: 255px; 
-	padding: 7px 0 0 7px; margin-right: 50px; -webkit-border-radius: 50%; 
-	-moz-border-radius: 50%; border-radius: 50%; }
+.slider-testimonials .slide-image { float: left; width: 260px; height: 280px; 
+	padding: 7px 0 0 7px; margin-right: 50px; }
 
 /*  background: url(images/sprite.png) no-repeat 0px -209px; */
 
@@ -501,13 +500,16 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 /* ==========================================================================
 	#Section-office
 ========================================================================== */
-.section-office { padding: 54px 0 53px; border-top: 1px solid #e3e2df; text-align: center; }
+.section-office { padding: 54px 0 53px; border-top: 1px solid #e3e2df;
+									text-align: center; }
 .section-office .section-head { padding: 0 300px; margin-bottom: 44px; }
 .section-office h2 { margin-bottom: 15px; }
+.section-office .section-body { min-height: 560px; }
 
-.slider-office { position: relative; display: inline-block; width: 923px; }
+.slider-office { position: relative; display: inline-block; }
 .slider-office .slides { list-style: none outside none; }
-.slider-office .slide { float: left; height: 632px; }
+.slider-office .slide { float: left; }
+.slider-office .slide img {  border: 2px solid black; }
 .slider-office .slider-paging { margin-top: 15px; text-align: right; }
 .slider-office .slider-paging ul { display: inline-block; list-style: none outside none; }
 .slider-office .slider-paging li { float: left; }
@@ -623,4 +625,5 @@ input.subscribe-btn:hover { background: #99bb48; }
 	.slider-team .slider-next { right: -26px; }
 
 	.slider-team .slide ~ .slide { margin-left: 18px; }
+
 }
