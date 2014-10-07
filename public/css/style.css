@@ -510,7 +510,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-office { position: relative; display: inline-block; }
 .slider-office .slides { list-style: none outside none; }
 .slider-office .slide { float: left; }
-.slider-office .slide img { border: 2px solid black; height: auto; }
+.slider-office .slide img { border: 2px solid black; }
 .slider-office .slider-paging { margin-top: 15px; text-align: right; }
 .slider-office .slider-paging ul { display: inline-block; list-style: none outside none; }
 .slider-office .slider-paging li { float: left; }
