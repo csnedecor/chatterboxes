@@ -61,11 +61,12 @@
 			var $currentImage = $('.slider-team').find('.current');
 			var $lastSlide = $('.slider-team').find('.slide').last();
 
+			$currentImage.removeClass('current');
+
 			if(direction === 'forward'){
 
-				$currentImage.removeClass('current').addClass('staff-hidden');
 				$currentImage.next().addClass('current');
-				$currentImage.fadeOut().detach().appendTo('.slides');
+				$currentImage.addClass('staff-hidden').detach().appendTo('.slides');
 				$lastSlide.prev().removeClass('staff-hidden');
 
 				changeBio('forward');
@@ -73,10 +74,11 @@
 			} else {
 					var $teamSlides = $('.slider-team').find('.slides');
 			
-					// Find the last shown slide and hide it
+					// Find the last displayed slide and hide it
 					$lastSlide.prev().prev().addClass('staff-hidden');
-					$lastSlide.removeClass('staff-hidden').addClass('current').detach().prependTo($teamSlides);
-					$currentImage.removeClass('current');
+
+					$lastSlide.removeClass('staff-hidden').addClass('current')
+						.detach().prependTo($teamSlides);
 
 					changeBio('previous');
 			}
