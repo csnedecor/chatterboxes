@@ -26,6 +26,7 @@
 		});
 
 		// Slider Office
+
 		$('.slider-office .slides').carouFredSel({
 			scroll : { fx : "fade" },
 			pagination: {
@@ -36,19 +37,17 @@
 			}
 		});
 
-		// Slider Bios
+		// Slider Staff Bios
 		function changeBio(direction){
 			var $currentBio = $('.section-current');
 
 			$currentBio.removeClass('section-current').addClass('section-hidden').hide();
 	
 			if(direction === 'forward'){
-
 					$currentBio.next().fadeIn('slow').removeClass('section-hidden').addClass('section-current');
 					$currentBio.detach().appendTo('.bio-paragraphs');
 
 			} else {
-
 					$('.bio-paragraphs').find('.section').last()
 						.detach().prependTo('.bio-paragraphs').fadeIn('slow')
 							.removeClass('section-hidden').addClass('section-current');
@@ -64,7 +63,6 @@
 			$currentImage.removeClass('current');
 
 			if(direction === 'forward'){
-
 				$currentImage.next().addClass('current');
 				$currentImage.addClass('staff-hidden').detach().appendTo('.slides');
 				$lastSlide.prev().removeClass('staff-hidden');
