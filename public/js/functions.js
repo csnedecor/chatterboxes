@@ -22,19 +22,22 @@
 		// Slider Testimonials Small
 		$('.slider-testimonial-small .slides').carouFredSel({
 			prev: '.slider-testimonial-small .slider-prev',
-			next: '.slider-testimonial-small .slider-next'
+			next: '.slider-testimonial-small .slider-next',
+			auto: 5000,
+			scroll: { duration: 1000 }
 		});
 
 		// Slider Office
-
-		$('.slider-office .slides').carouFredSel({
-			scroll : { fx : "fade" },
-			pagination: {
-				container: '.slider-office .slider-paging ul',
-				anchorBuilder: function(number) {
-				return '<li><a href="#' + number + '">'+ number +'</a></li>';
+		$win.load(function(){
+			$('.slider-office .slides').carouFredSel({
+				scroll : { fx : "fade" },
+				pagination: {
+					container: '.slider-office .slider-paging ul',
+					anchorBuilder: function(number) {
+					return '<li><a href="#' + number + '">'+ number +'</a></li>';
+					}
 				}
-			}
+			});
 		});
 
 		// Slider Staff Bios

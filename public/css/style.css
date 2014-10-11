@@ -205,6 +205,7 @@ p { margin: 0; }
 .form-schedule .form-controls { overflow: hidden; }
 .form-schedule .field,
 .form-sign .field { float: left; width: 282px; height: 49px; padding: 7px 20px; border: 1px solid #769b6f; border-radius: 5px; margin-bottom: 0; background: #e6f8ff; color: #646464; }
+.form-sign .textarea { border: 1px solid #769b6f; border-radius: 5px; background: #e6f8ff; color: #646464; }
 .form-schedule .field:focus,
 .form-sign .field:focus { background: #dcf5ff; }
 .form-schedule .field ~ .field { margin-left: 18px; }
@@ -352,6 +353,12 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .contacts-alt p { padding-left: 0; margin: 0 0 8px; }
 .contacts-alt h4 { margin-bottom: 12px; }
 .contacts-alt .contacts-avatar { float: left; padding-top: 12px; margin-right: 29px; }
+.contacts-alt .contacts-avatar img { border-radius: 7px; 
+																		 -webkit-border-radius: 7px; 
+																		 -moz-border-radius: 7px; 
+																		 box-shadow: 1px 1px 4px grey;
+																	 }
+
 .contacts-alt .contacts-content { overflow: hidden; padding-top: 53px; }
 .contacts-alt .contacts-content a { display: inline-block; margin-bottom: 19px; font-size: 14px; line-height: 2.3; color: #7db143; }
 .contacts-alt .contacts-content a:hover { text-decoration: underline; }
@@ -394,7 +401,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .form-sign { padding: 42px 42px 23px; margin-top: 9px; background: url(images/form-pattern.png) 0 0; }
 .form-sign .form-inner { padding: 0 17px 18px 15px; border: 1px solid #d2e4ce; border-radius: 4px; background: rgba(255, 255, 255, 0.11); } 
 .form-sign .form-head { padding-top: 16px; margin-bottom: 13px; }
-.form-sign h2 { font-family: 'Chomp', sans-serif; font-size: 37px; color: #fff; letter-spacing: 0.2em; text-align: center; }
+.form-sign h3 { font-family: 'Chomp', sans-serif; font-size: 32px; color: #fff; letter-spacing: 0.2em; text-align: center; }
 
 .form-sign .field { float: none; display: block; width: 100%; height: 46px; padding: 13px 17px; }
 
@@ -419,7 +426,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-testimonial-small .slides { list-style: none outside none; }
 .slider-testimonial-small .slide { float: left; }
 .slider-testimonial-small .slide-content { width: 612px; padding: 0 96px; text-align: center; }
-.slider-testimonial-small h3 { margin-bottom: 26px; font-family: 'Chomp', sans-serif; font-size: 28px; color: #686868; letter-spacing: 0.18em; }
+.slider-testimonial-small h2 { margin-bottom: 66px; font-family: 'Chomp', sans-serif; font-size: 28px; color: #686868; letter-spacing: 0.18em; }
 
 .slider-testimonial-small blockquote { padding: 0; border: none; margin: 0 0 12px 0; font-size: 26px; color: #686868; font-style: italic; letter-spacing: 0.025em; }
 .slider-testimonial-small span { font-size: 20px; color: #70a934; font-style: italic; }

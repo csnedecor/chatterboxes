@@ -7,22 +7,22 @@ require 'gibbon'
 Dotenv.load
 
 def send_mail(name, email, phone, message=nil)
-  if message == nil
-    erb_template = :contact_email
-    body = "Hi Brittany,\n\t#{name} is interested in an appointment Chatterboxes.  They can be reached via email at #{email} or by phone at #{phone}."
-  else
-    erb_template = :message_email
-    body = "Hi Brittany,\n\t New message from #{name}:  \n #{message} \n They can be reached via email at #{email} or by phone at #{phone}."
-  end
+  body =  
+    '''
+    Hi Brittany,\n
+      \t New message from #{name}:  \n 
+      #{message} \n 
+      They can be reached via email at #{email} or by phone at #{phone}.
+    '''
 
   Pony.mail({
     to: 'murphydbuffalo@gmail.com',
     # to: 'brittany@teamchatterboxes.com',
     # cc: 'megan@teamchatterboxes.com',
     # bcc: "murphydbuffalo@gmail.com",
-    from: "Web-Services@teamchatterboxes.com",
+    from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
-    html_body: erb(erb_template),
+    html_body: erb(:message_email),
     body: body,
     via: :smtp,
     via_options: {
@@ -50,7 +50,17 @@ rescue Gibbon::MailChimpError => error
   @error_message = error.message
 end
 
+def validate_presence_of(*params)
+  params.all? { |p| p.length > 0 }
+end
+
 get '/' do
+  redirect '/home'
+end
+
+post '/mailchimp' do
+  @email = params[:email]
+  subscribe_to_mail_chimp(@email)
   redirect '/home'
 end
 
@@ -58,10 +68,27 @@ get '/home' do
   erb :home, layout: :application
 end
 
-post '/mailchimp' do
+post '/home' do
+  if params[:last_name] != nil
+    @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
+  else
+    @full_name = "#{params[:first_name].capitalize}"
+  end
+
+  @phone = params[:phone]
   @email = params[:email]
-  subscribe_to_mail_chimp(@email)
+
+  send_mail(@full_name, @email, @phone)
+
   redirect '/home'
+end
+
+get '/about' do
+  erb :about, layout: :application
+end
+
+get '/contact' do
+  erb :contact, layout: :application
 end
 
 post '/contact' do
@@ -80,19 +107,21 @@ post '/contact' do
   redirect '/home'
 end
 
-get '/about' do
-  erb :about, layout: :application
-end
-
-get '/contact' do
-  erb :contact, layout: :application
-end
-
 get '/services' do
   erb :services, layout: :application
 end
 
 get '/started' do
   erb :started, layout: :application
+end
+
+post '/started' do
+  @full_name = params[:name]
+  @email = params[:email]
+  @phone = params[:phone]
+  @message = params[:message]
+  send_mail(@full_name, @email, @phone, @message)
+
+  redirect '/home'
 end
 
