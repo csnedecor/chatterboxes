@@ -18,7 +18,7 @@ def send_mail(name, email, phone, message=nil)
   Pony.mail({
     to: 'murphydbuffalo@gmail.com',
     # to: 'brittany@teamchatterboxes.com',
-    # cc: 'megan@teamchatterboxes.com',
+    cc: 'megan@teamchatterboxes.com',
     # bcc: "murphydbuffalo@gmail.com",
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
