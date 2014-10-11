@@ -8,18 +8,15 @@ Dotenv.load
 
 def send_mail(name, email, phone, message=nil)
   body =  
-    '''
-    Hi Brittany,\n
+    "Hi Brittany,\n
       \t New message from #{name}:  \n 
       #{message} \n 
-      They can be reached via email at #{email} or by phone at #{phone}.
-    '''
+      They can be reached via email at #{email} or by phone at #{phone}."
 
   Pony.mail({
     to: 'murphydbuffalo@gmail.com',
     # to: 'brittany@teamchatterboxes.com',
     cc: 'megan@teamchatterboxes.com',
-    # bcc: "murphydbuffalo@gmail.com",
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
     html_body: erb(:message_email),
