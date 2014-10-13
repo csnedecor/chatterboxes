@@ -68,12 +68,6 @@ def presence_valid?(*params)
   params.length > 0 && params.all? { |p| p.length > 0 }
 end
 
-def phone_number_valid?(input)
-  input.gsub!(/\D/, '')
-  numbers = input.split('')
-  numbers.count > 5 && numbers.count < 12
-end
-
 get '/' do
   redirect '/home'
 end
@@ -96,7 +90,7 @@ post '/home' do
 
     send_mail(@full_name, @email, @phone)
   else
-    puts 'Not valid input'
+    puts 'Invalid input'
   end
 
   redirect '/home'
@@ -111,18 +105,16 @@ get '/contact' do
 end
 
 post '/contact' do
-  if params[:last_name] != nil
-    @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
+  if presence_valid?(params[:name], params[:message], params[:email], params[:phone])
+    @full_name = "#{params[:name].capitalize}"
+    @phone = params[:phone]
+    @email = params[:email]
+    @message = params[:message]
+
+    send_mail(@full_name, @email, @phone, @message)
   else
-    @full_name = "#{params[:first_name].capitalize}"
+    puts 'Invalid input'
   end
-
-  @phone = params[:phone]
-  @email = params[:email]
-  @message = params[:message]
-
-  send_mail(@full_name, @email, @phone, @message)
-
   redirect '/home'
 end
 
@@ -135,11 +127,16 @@ get '/started' do
 end
 
 post '/started' do
-  @full_name = params[:name]
-  @email = params[:email]
-  @phone = params[:phone]
-  @message = params[:message]
-  send_mail(@full_name, @email, @phone, @message)
+  if presence_valid?(params[:name], params[:message], params[:email], params[:phone])
+    @full_name = "#{params[:name].capitalize}"
+    @phone = params[:phone]
+    @email = params[:email]
+    @message = params[:message]
+
+    send_mail(@full_name, @email, @phone, @message)
+  else
+    puts 'Invalid input'
+  end
 
   redirect '/home'
 end
