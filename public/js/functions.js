@@ -42,6 +42,8 @@
 
 		// Slider Staff Bios
 		function highlightSlide(event){
+			$('.section-team').attr('data-need-revert', true);
+
 			var $highlightedSlide = $('.slider-team').find('.current');
 			$highlightedSlide.removeClass('current');
 
@@ -61,7 +63,7 @@
 				so that the changeSlide() function still
 				works properly.  The order of the DOM is
 				not being actually changed, only the classes
-				of the elements.
+				of the elements so that first bio is highlighted.
 			*/
 		}
 
@@ -82,17 +84,11 @@
 							.removeClass('section-hidden').addClass('section-current');
 			}
 			else if(selection === 'revert'){
-				$('.section-original').fadeIn('slow')
-					.removeClass('section-hidden section-original')
+				$('.bio-paragraphs').find('.section').first()
+					.fadeIn('slow').removeClass('section-hidden')
 						.addClass('section-current');
 			}
 			else {
-				$currentBio.addClass('section-original');
-				/*
-					This class is needed to revert bios and images to 
-					their original order, prior to the click event. It
-					is be used by the unhighlightSlide() function.
-				*/
 				var $selectedSlide = $(selection.currentTarget);
 				var position = $('.slider-team')
 					.find('.slide').index($selectedSlide) + 1;
@@ -147,14 +143,14 @@
 		});
 
 		$next.click(function(event){
-			if( $('.section-original').length > 0 ){
+			if( $('.section-team').data('need-revert') === true ){
 				unhighlightSlide();
 			}
 			changeSlide('forward');
 		});
 
 		$prev.click(function(event){
-			if( $('.section-original').length > 0 ){
+			if( $('.section-team').data('need-revert') === true ){
 				unhighlightSlide();
 			}
 			changeSlide('backward');
