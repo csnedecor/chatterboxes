@@ -41,23 +41,76 @@
 		});
 
 		// Slider Staff Bios
-		function changeBio(direction){
-			var $currentBio = $('.section-current');
+		function highlightSlide(event){
+			var $highlightedSlide = $('.slider-team').find('.current');
+			$highlightedSlide.removeClass('current');
 
-			$currentBio.removeClass('section-current').addClass('section-hidden').hide();
+			$(event.currentTarget).addClass('current');
+		}
+
+		function unhighlightSlide(){
+			var $highlightedSlide = $('.slider-team').find('.current');
+			$highlightedSlide.removeClass('current');
+
+			$('.slider-team').find('.slide').first()
+				.addClass('current');
+
+			changeBio('revert');
+			/*	
+				Reverts slides to their original "order"
+				so that the changeSlide() function still
+				works properly.  The order of the DOM is
+				not being actually changed, only the classes
+				of the elements.
+			*/
+		}
+
+		function changeBio(selection){
+			var $currentBio = $('.section-current');
+			$currentBio.removeClass('section-current')
+				.addClass('section-hidden').hide();
 	
-			if(direction === 'forward'){
-					$currentBio.next().fadeIn('slow').removeClass('section-hidden').addClass('section-current');
+			if(selection === 'forward'){
+					$currentBio.next().fadeIn('slow')
+						.removeClass('section-hidden').addClass('section-current');
 					$currentBio.detach().appendTo('.bio-paragraphs');
 
-			} else {
+			} 
+		  else if(selection === 'backward'){
 					$('.bio-paragraphs').find('.section').last()
 						.detach().prependTo('.bio-paragraphs').fadeIn('slow')
 							.removeClass('section-hidden').addClass('section-current');
 			}
+			else if(selection === 'revert'){
+				$('.section-original').fadeIn('slow')
+					.removeClass('section-hidden section-original')
+						.addClass('section-current');
+			}
+			else {
+				$currentBio.addClass('section-original');
+				/*
+					This class is needed to revert bios and images to 
+					their original order, prior to the click event. It
+					is be used by the unhighlightSlide() function.
+				*/
+				var $selectedSlide = $(selection.currentTarget);
+				var position = $('.slider-team')
+					.find('.slide').index($selectedSlide) + 1;
+				/*  
+					Must add 1 because JQuery indexes are 0-based,
+			    but CSS indexes are 1-based and we use the CSS
+				  psuedo-selector :nth-of-type below.
+				*/
+
+				var $newBio = $('.bio-paragraphs')
+					.find('section:nth-of-type(' + position + ')');
+
+				$newBio.fadeIn('slow').removeClass('section-hidden')
+					.addClass('section-current');
+			}
 		}
 
-		function changeSlide(direction) {
+		function changeSlide(selection) {
 			event.preventDefault();
 
 			var $currentImage = $('.slider-team').find('.current');
@@ -65,7 +118,7 @@
 
 			$currentImage.removeClass('current');
 
-			if(direction === 'forward'){
+			if(selection === 'forward'){
 				$currentImage.next().addClass('current');
 				$currentImage.addClass('staff-hidden').detach().appendTo('.slides');
 				$lastSlide.prev().removeClass('staff-hidden');
@@ -81,51 +134,31 @@
 					$lastSlide.removeClass('staff-hidden').addClass('current')
 						.detach().prependTo($teamSlides);
 
-					changeBio('previous');
+					changeBio('backward');
 			}
 		}
 
 		var $prev = $('.slider-prev');
 		var $next = $('.slider-next');
 
+		$('.slider-team').find('.slide').click(function(event){
+			highlightSlide(event);
+			changeBio(event);
+		});
+
 		$next.click(function(event){
+			if( $('.section-original').length > 0 ){
+				unhighlightSlide();
+			}
 			changeSlide('forward');
 		});
 
 		$prev.click(function(event){
+			if( $('.section-original').length > 0 ){
+				unhighlightSlide();
+			}
 			changeSlide('backward');
 		});
-
-		// Home Page to Links to Accordion Tabs
-		// var htmlID;
-		// if(htmlID !== null){
-		// 	$(htmlID).trigger('click');
-		// }
-
-		// $('.therapy-items').on('click', 'a', function(event){
-		// 	event.preventDefault();
-
-		// 	console.log('Click registered!');
-
-		// 	console.log(event.currentTarget);
-			
-		// 	var fullPath = $(event.currentTarget).attr('href');
-		// 	console.log('Path is: ' + fullPath);
-
-		// 	var index = fullPath.indexOf('#');
-		// 	console.log('Index is: ' + index);
-
-		// 	htmlID = fullPath.substring(index);
-		// 	console.log('HTML ID is: ' + htmlID);
-
-		// 	var shortPath = fullPath.substring(1, index);
-		// 	console.log('Short path is: ' + shortPath);
-
-		// 	window.location.pathname = shortPath;
-		//  Need a way to pass param to URL:  encodeURI and encodeURIComponent are not working
-		// 	Would then need a regexp to parse the window.location.href, grab the param, and trigger the JQuery below
-
-		// });
 
 		// Accordion Therapy
 		(function(){
