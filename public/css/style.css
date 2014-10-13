@@ -453,6 +453,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-team { position: relative; padding: 0 88px 0 93px; margin-bottom: 26px; }
 .slider-team .slides { overflow: hidden; list-style: none outside none; }
 .slider-team .slide { float: left; width: 281px; border-radius: 4px; opacity: .5; }
+.slider-team .slide:hover:not(.current) { border: 1px dashed #76ad3b; }
 .slider-team .slide.current { opacity: 1; }
 .slider-team .slide ~ .slide { margin-left: 30px; }
 .slider-team .current { padding-top: 40px; }
