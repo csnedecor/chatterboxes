@@ -42,29 +42,9 @@
 
 		// Slider Staff Bios
 		function highlightSlide(event){
-			$('.section-team').attr('data-need-revert', true);
-
 			var $highlightedSlide = $('.slider-team').find('.current');
 			$highlightedSlide.removeClass('current');
-
 			$(event.currentTarget).addClass('current');
-		}
-
-		function unhighlightSlide(){
-			var $highlightedSlide = $('.slider-team').find('.current');
-			$highlightedSlide.removeClass('current');
-
-			$('.slider-team').find('.slide').first()
-				.addClass('current');
-
-			changeBio('revert');
-			/*	
-				Reverts slides to their original "order"
-				so that the changeSlide() function still
-				works properly.  The order of the DOM is
-				not being actually changed, only the classes
-				of the elements so that first bio is highlighted.
-			*/
 		}
 
 		function changeBio(selection){
@@ -73,30 +53,25 @@
 				.addClass('section-hidden').hide();
 	
 			if(selection === 'forward'){
-					$currentBio.next().fadeIn('slow')
-						.removeClass('section-hidden').addClass('section-current');
-					$currentBio.detach().appendTo('.bio-paragraphs');
-
+				$currentBio.next().fadeIn('slow')
+					.removeClass('section-hidden').addClass('section-current');
+					
+				$('.bio-paragraphs').find('.section').first().detach()
+					.appendTo('.bio-paragraphs');
 			} 
 		  else if(selection === 'backward'){
-					$('.bio-paragraphs').find('.section').last()
-						.detach().prependTo('.bio-paragraphs').fadeIn('slow')
-							.removeClass('section-hidden').addClass('section-current');
-			}
-			else if(selection === 'revert'){
-				$('.bio-paragraphs').find('.section').first()
-					.fadeIn('slow').removeClass('section-hidden')
-						.addClass('section-current');
+				$('.bio-paragraphs').find('.section').last().detach()
+					.prependTo('.bio-paragraphs');
+
+				$currentBio.prev().fadeIn('slow').removeClass('section-hidden')
+					.addClass('section-current');
 			}
 			else {
 				var $selectedSlide = $(selection.currentTarget);
-				var position = $('.slider-team')
-					.find('.slide').index($selectedSlide) + 1;
-				/*  
-					Must add 1 because JQuery indexes are 0-based,
-			    but CSS indexes are 1-based and we use the CSS
-				  psuedo-selector :nth-of-type below.
-				*/
+
+				//  JQuery indexes are 0-based but CSS indexes are 1-based
+				var position = $('.slider-team').find('.slide')
+					.index($selectedSlide) + 1;
 
 				var $newBio = $('.bio-paragraphs')
 					.find('section:nth-of-type(' + position + ')');
@@ -108,27 +83,29 @@
 
 		function changeSlide(selection) {
 			event.preventDefault();
-
-			var $currentImage = $('.slider-team').find('.current');
+			var $currentSlide = $('.slider-team').find('.current');
 			var $lastSlide = $('.slider-team').find('.slide').last();
 
-			$currentImage.removeClass('current');
+			$currentSlide.removeClass('current');
 
 			if(selection === 'forward'){
-				$currentImage.next().addClass('current');
-				$currentImage.addClass('staff-hidden').detach().appendTo('.slides');
+				$currentSlide.next().addClass('current');
+				$('.slider-team').find('.slide').first().addClass('staff-hidden')
+					.detach().appendTo('.slides');
+
 				$lastSlide.prev().removeClass('staff-hidden');
 
 				changeBio('forward');
-
-			} else {
+			} 
+			else {
 					var $teamSlides = $('.slider-team').find('.slides');
 			
 					// Find the last displayed slide and hide it
 					$lastSlide.prev().prev().addClass('staff-hidden');
+					$lastSlide.detach().prependTo($teamSlides)
+						.removeClass('staff-hidden');
 
-					$lastSlide.removeClass('staff-hidden').addClass('current')
-						.detach().prependTo($teamSlides);
+					$currentSlide.prev().addClass('current');
 
 					changeBio('backward');
 			}
@@ -143,16 +120,10 @@
 		});
 
 		$next.click(function(event){
-			if( $('.section-team').data('need-revert') === true ){
-				unhighlightSlide();
-			}
 			changeSlide('forward');
 		});
 
 		$prev.click(function(event){
-			if( $('.section-team').data('need-revert') === true ){
-				unhighlightSlide();
-			}
 			changeSlide('backward');
 		});
 
