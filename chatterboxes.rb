@@ -16,7 +16,7 @@ def send_mail(name, email, phone, message=nil)
   Pony.mail({
     to: 'murphydbuffalo@gmail.com',
     # to: 'brittany@teamchatterboxes.com',
-    # cc: 'megan@teamchatterboxes.com',
+    cc: 'megan@teamchatterboxes.com',
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
     html_body: erb(:message_email),
@@ -60,8 +60,6 @@ def subscribe_to_mail_chimp(email)
 rescue Gibbon::MailChimpError => error
   puts error.message
   puts "Error code is: #{error.code}"
-  redirect '/home'
-  @error_message = error.message
 end
 
 def presence_valid?(*params)
@@ -75,7 +73,7 @@ end
 post '/mailchimp' do
   @email = params[:email]
   subscribe_to_mail_chimp(@email)
-  redirect '/home'
+  redirect '/home?newsletter=true#newsletter-form'
 end
 
 get '/home' do
@@ -93,7 +91,7 @@ post '/home' do
     puts 'Invalid input'
   end
 
-  redirect '/home'
+  redirect '/home?mail=true#home-form-header'
 end
 
 get '/about' do
@@ -112,10 +110,11 @@ post '/contact' do
     @message = params[:message]
 
     send_mail(@full_name, @email, @phone, @message)
+    redirect '/contact?mail=true#contact-form-header'
   else
     puts 'Invalid input'
+    redirect '/contact'
   end
-  redirect '/home'
 end
 
 get '/services' do
@@ -134,10 +133,11 @@ post '/started' do
     @message = params[:message]
 
     send_mail(@full_name, @email, @phone, @message)
+    redirect '/started?mail=true#started-form-header'
   else
     puts 'Invalid input'
+    redirect '/started'
   end
 
-  redirect '/home'
 end
 

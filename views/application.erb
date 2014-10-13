@@ -151,18 +151,24 @@
       
       <div class="medium-6 large-6 columns">
         <h3>subscribe to our newsletter</h3>
-
-        <p>Be the first to know. Sign up to stay informed. </p>
+        <p>Be the first to know. Sign up to stay informed.</p>
 
         <div class="subscribe" id='newsletter-form'>
-            <form action="/mailchimp" method="post">
-                <label for="email" class="hidden"></label>
-                
-                <input type="email" placeholder="Enter email" class="subscribe-field" name='email' id="email" required />
+          <form action="/mailchimp" method="post">
+              <label for="email" class="hidden"></label>
+              
+              <input type="email" placeholder="Enter email" class="subscribe-field" name='email' id="email" required />
 
-                <input type="submit" value="Subscribe" class="subscribe-btn" />
-            </form>
+              <input type="submit" value="Subscribe" class="subscribe-btn" />
+          </form>
         </div><!-- /.subscribe -->
+        <% if params[:newsletter] == 'true' %>
+          <div class='flash'>
+            <p class='flash-notice'>
+              Thank you for signing up! You should receive a confirmation email shortly.
+            </p>
+          </div>
+        <% end %>
       </div><!-- /.medium-6 large-6 columns -->
     </div><!-- /.row -->
 

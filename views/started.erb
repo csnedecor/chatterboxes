@@ -25,8 +25,13 @@
 									<div class="form-sign">
 										<form action="/started" method="post">
 											<div class="form-inner">
-												<header class="form-head">
-													<h3>Send Us A Message to Get Started</h3>
+												<header class="form-head" id='started-form-header'>
+													<h3>
+														Send Us A Message to Get Started
+														<% if params[:mail] == 'true' %>
+															<p class='flash-notice'>Your message has been sent!</p>
+														<% end %>
+													</h3>
 												</header><!-- /.form-head -->
 									
 												<div class="form-body">
