@@ -9,18 +9,35 @@ Dotenv.load
 def send_mail(name, email, phone, message=nil)
   body =  
     "Hi Brittany,\n
-      \t New message from #{name}:  \n 
-      #{message} \n 
-      They can be reached via email at #{email} or by phone at #{phone}."
+    \t New message from #{name}:  \n 
+    \t #{message} \n 
+    \t They can be reached via email at #{email} or by phone at #{phone}."
 
   Pony.mail({
     to: 'murphydbuffalo@gmail.com',
     # to: 'brittany@teamchatterboxes.com',
-    cc: 'megan@teamchatterboxes.com',
+    # cc: 'megan@teamchatterboxes.com',
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
     html_body: erb(:message_email),
     body: body,
+    via: :smtp,
+    via_options: {
+      :address        => 'smtp.mandrillapp.com',
+      :port           => '587',
+      :user_name      => ENV['MANDRILL_USERNAME'],
+      :password       => ENV['MANDRILL_APIKEY'],
+      :authentication => :plain, 
+      :domain         => "heroku.com"
+    }
+  })
+
+  Pony.mail({
+    to: email,
+    from: "Chatterboxes-Web-Services@teamchatterboxes.com",
+    subject: "Your message was sent!",
+    html_body: erb(:confirmation_email),
+    body: "Thank you for contacting Chatterboxes! A member of our team will be in touch with you shortly.",
     via: :smtp,
     via_options: {
       :address        => 'smtp.mandrillapp.com',
@@ -47,8 +64,14 @@ rescue Gibbon::MailChimpError => error
   @error_message = error.message
 end
 
-def validate_presence_of(*params)
-  params.all? { |p| p.length > 0 }
+def presence_valid?(*params)
+  params.length > 0 && params.all? { |p| p.length > 0 }
+end
+
+def phone_number_valid?(input)
+  input.gsub!(/\D/, '')
+  numbers = input.split('')
+  numbers.count > 5 && numbers.count < 12
 end
 
 get '/' do
@@ -66,16 +89,15 @@ get '/home' do
 end
 
 post '/home' do
-  if params[:last_name] != nil
+  if presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
     @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
+    @phone = params[:phone]
+    @email = params[:email]
+
+    send_mail(@full_name, @email, @phone)
   else
-    @full_name = "#{params[:first_name].capitalize}"
+    puts 'Not valid input'
   end
-
-  @phone = params[:phone]
-  @email = params[:email]
-
-  send_mail(@full_name, @email, @phone)
 
   redirect '/home'
 end
