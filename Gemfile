@@ -23,3 +23,6 @@ gem 'mailchimp-api'
 
 # Wrapper for the mailchimp-api gem, friendlier syntax
 gem 'gibbon'
+
+# Wrapper for the Olark live-chat service 
+gem 'rack-olark'

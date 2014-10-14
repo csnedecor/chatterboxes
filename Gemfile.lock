@@ -23,6 +23,8 @@ GEM
     pony (1.11)
       mail (>= 2.0)
     rack (1.5.2)
+    rack-olark (0.1)
+      rack (>= 1.2)
     rack-protection (1.5.3)
       rack
     shotgun (0.9)
@@ -43,5 +45,6 @@ DEPENDENCIES
   mailchimp-api
   pony
   rack
+  rack-olark
   shotgun
   sinatra

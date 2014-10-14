@@ -3,8 +3,10 @@ require 'dotenv'
 require 'pony'
 require 'mailchimp'
 require 'gibbon'
+require 'rack-olark'
 
 Dotenv.load
+use Rack::Olark, id: ENV['OLARK_SITE_ID']
 
 def send_mail(name, email, phone, message=nil)
   body =  
