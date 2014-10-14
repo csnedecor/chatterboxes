@@ -3,6 +3,13 @@
 	var $doc = $(document);
 
 	$doc.ready(function() {
+		// Show Video
+		$('.video.cover').click(function(event){
+			event.preventDefault();
+			$('.video.hidden').removeClass('hidden');
+			$(event.currentTarget).addClass('hidden');
+		});
+
 		// Fullscreener
 		$('.footer-background img').fullscreener();
 		$('.intro-image img').fullscreener();
