@@ -14,6 +14,7 @@ def send_mail(name, email, phone, message=nil)
     \t They can be reached via email at #{email} or by phone at #{phone}."
 
   Pony.mail({
+    # to: 'murphydbuffalo@gmail.com',
     bcc: 'murphydbuffalo@gmail.com',
     to: 'brittany@teamchatterboxes.com',
     cc: 'megan@teamchatterboxes.com',
@@ -92,11 +93,11 @@ post '/home' do
     @email = params[:email]
 
     send_mail(@full_name, @email, @phone)
+    redirect '/home?mail=true'
   else
-    puts 'Invalid input'
+    puts 'Email error: blank fields'
+    redirect '/home'
   end
-
-  redirect '/home?mail=true'
 end
 
 get '/about' do
@@ -117,7 +118,7 @@ post '/contact' do
     send_mail(@full_name, @email, @phone, @message)
     redirect '/contact?mail=true'
   else
-    puts 'Invalid input'
+    puts 'Email error: blank fields'
     redirect '/contact'
   end
 end
@@ -125,6 +126,20 @@ end
 get '/services' do
   @therapy_id = params[:therapy_id] || 'none'
   erb :services, layout: :application
+end
+
+post '/services' do
+  if presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
+    @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
+    @phone = params[:phone]
+    @email = params[:email]
+
+    send_mail(@full_name, @email, @phone)
+    redirect '/services?mail=true'
+  else
+    puts 'Email error: blank fields'
+    redirect '/services'
+  end
 end
 
 get '/started' do
@@ -141,7 +156,7 @@ post '/started' do
     send_mail(@full_name, @email, @phone, @message)
     redirect '/started?mail=true'
   else
-    puts 'Invalid input'
+    puts 'Email error: blank fields'
     redirect '/started'
   end
 
