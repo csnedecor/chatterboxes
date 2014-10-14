@@ -596,10 +596,15 @@ p.copyright { margin: 215px 0 0; font-size: 15px; color: #fff; text-align: cente
 .subscribe { margin-top: 38px; }
 .subscribe form { overflow: hidden; margin: 0; }
 input.subscribe-field,
+select.subscribe-field,
 input.subscribe-btn { float: left; border: none; background: #8fb23d; font-size: 18px; color: #fff; }
-input.subscribe-field { width: 420px; height: 63px; padding: 9px 25px; border-radius: 5px 0 0 5px; margin-bottom: 0; }
+input.subscribe-field,
+input.subscribe-btn { margin-top: 15px; }
+input.subscribe-btn { margin-left: 5px; }
+input.subscribe-field,
+select.subscribe-field { width: 420px; height: 63px; padding: 9px 25px; border-radius: 5px; margin-bottom: 0; }
 input.subscribe-field:focus { background: #8fb23d; color: #fff; }
-input.subscribe-btn { padding: 20px 29px 21px; border-left: 1px solid #7d9664; border-radius: 0 5px 5px 0; }
+input.subscribe-btn { padding: 20px 29px 21px; border-left: 1px solid #7d9664; border-radius: 5px; }
 input.subscribe-btn:hover { background: #99bb48; }
 
 .subscribe ::-webkit-input-placeholder { font-family: 'Open Sans', sans-serif; font-size: 18px; color: #fff; opacity: 1; }

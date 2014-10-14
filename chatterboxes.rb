@@ -50,11 +50,12 @@ def send_mail(name, email, phone, message=nil)
   })
 end
 
-def subscribe_to_mail_chimp(email)
+def subscribe_to_mail_chimp(email, category)
   gibbon = Gibbon::API.new
   gibbon.lists.subscribe({
     :id => ENV['MAILCHIMP_LIST_ID'], 
     :email => { :email => email },
+    :merge_vars => { :FNAME => category },
     :double_optin => true 
   })
 rescue Gibbon::MailChimpError => error
@@ -71,9 +72,13 @@ get '/' do
 end
 
 post '/mailchimp' do
-  @email = params[:email]
-  subscribe_to_mail_chimp(@email)
-  redirect '/home?newsletter=true'
+  if presence_valid?(params[:email], params[:category])
+    subscribe_to_mail_chimp(params[:email], params[:category])
+    redirect '/home?newsletter=true'
+  else
+    puts 'Newsletter sign up error: blank fields'
+    redirect '/home'
+  end
 end
 
 get '/home' do

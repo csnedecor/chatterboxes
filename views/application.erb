@@ -157,11 +157,18 @@
 
         <div class="subscribe" id='newsletter-form' data-flash=<%=params[:newsletter]%>>
           <form action="/mailchimp" method="post">
-              <label for="email" class="hidden"></label>
-              
-              <input type="email" placeholder="Enter email" class="subscribe-field" name='email' id="email" required />
+            <select name='category' id='category' class='subscribe-field' required>
+              <option value="" disabled>I am a... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9660; </option>
+              <option value="Parent" >Parent</option>
+              <option value="Teacher" >Teacher</option>
+              <option value="Physician" > Physician</option>
+            </select>
+            <br><br>
 
-              <input type="submit" value="Subscribe" class="subscribe-btn" />
+            <label for="email" class="hidden"></label>
+            <input type="email" placeholder="Enter email" class="subscribe-field" name='email' id="email" required />
+
+            <input type="submit" value="Subscribe" class="subscribe-btn" />
           </form>
         </div><!-- /.subscribe -->
       </div><!-- /.medium-6 large-6 columns -->
