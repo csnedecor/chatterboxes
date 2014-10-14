@@ -142,6 +142,16 @@
 			var toggleSelector = '.accordion-head';
 			var $accordionBody = $('.accordion-head').next();
 		 
+		 	var therapyId = $('.accordion-therapy').data('therapy-id');
+		 	$win.load(function(){
+			 	if( therapyId !== 'none'){
+		 			console.log('Therapy ID is: ' + therapyId);
+		 			$('#' + therapyId).click();
+		 	}
+		 	else { console.log('No therapy id!'); }
+		 	});
+
+
 			$(toggleSelector).on('click', function(e) {
 		 
 				$(this).next().slideToggle();

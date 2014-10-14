@@ -118,6 +118,7 @@ post '/contact' do
 end
 
 get '/services' do
+  @therapy_id = params[:therapy_id] || 'none'
   erb :services, layout: :application
 end
 
