@@ -3,6 +3,23 @@
 	var $doc = $(document);
 
 	$doc.ready(function() {
+		// sweetAlert
+		$win.load(function(){
+			console.log($('#newsletter-form').data('flash'));
+			if($('#newsletter-form').data('flash') == true){
+				swal({ title: "Thank you!",
+							 text: "Thank you for signing up.  You should receive a confirmation email shortly.",
+							 imageUrl: 'css/images/favicon.ico'
+						});
+			}
+			else if($('.header').data('flash') == true){
+				swal({ title: "Message sent!",
+							 text: "Thank you for reaching out.  A member of the Chatterboxes team will be in touch with you shortly.",
+							 imageUrl: 'css/images/favicon.ico'
+						});
+			}
+		});
+
 		// Show Video
 		$('.video.cover').click(function(event){
 			event.preventDefault();
@@ -145,10 +162,8 @@
 		 	var therapyId = $('.accordion-therapy').data('therapy-id');
 		 	$win.load(function(){
 			 	if( therapyId !== 'none'){
-		 			console.log('Therapy ID is: ' + therapyId);
 		 			$('#' + therapyId).click();
-		 	}
-		 	else { console.log('No therapy id!'); }
+			 	}
 		 	});
 
 

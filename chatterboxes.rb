@@ -16,7 +16,7 @@ def send_mail(name, email, phone, message=nil)
   Pony.mail({
     to: 'murphydbuffalo@gmail.com',
     # to: 'brittany@teamchatterboxes.com',
-    cc: 'megan@teamchatterboxes.com',
+    # cc: 'megan@teamchatterboxes.com',
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
     html_body: erb(:message_email),
@@ -73,7 +73,7 @@ end
 post '/mailchimp' do
   @email = params[:email]
   subscribe_to_mail_chimp(@email)
-  redirect '/home?newsletter=true#newsletter-form'
+  redirect '/home?newsletter=true'
 end
 
 get '/home' do
@@ -91,7 +91,7 @@ post '/home' do
     puts 'Invalid input'
   end
 
-  redirect '/home?mail=true#home-form-header'
+  redirect '/home?mail=true'
 end
 
 get '/about' do
@@ -110,7 +110,7 @@ post '/contact' do
     @message = params[:message]
 
     send_mail(@full_name, @email, @phone, @message)
-    redirect '/contact?mail=true#contact-form-header'
+    redirect '/contact?mail=true'
   else
     puts 'Invalid input'
     redirect '/contact'
@@ -134,7 +134,7 @@ post '/started' do
     @message = params[:message]
 
     send_mail(@full_name, @email, @phone, @message)
-    redirect '/started?mail=true#started-form-header'
+    redirect '/started?mail=true'
   else
     puts 'Invalid input'
     redirect '/started'

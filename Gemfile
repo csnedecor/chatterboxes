@@ -12,10 +12,10 @@ gem 'shotgun'
 # Mail client
 gem 'pony'
 
-# Stores environment variables (for configuration mostly)
+# Stores environment variables
 gem 'dotenv'
 
-# Must install this gem and require it in your routes file 
+# Mailchimp mailing list client
 gem 'mailchimp'
 
 # Only need to install this gem
