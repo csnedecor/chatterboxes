@@ -3,6 +3,19 @@
 	var $doc = $(document);
 
 	$doc.ready(function() {
+		// Olark
+		olark.extend("CalloutBubble");
+		olark.configure("CalloutBubble.bubble_image_url", "css/images/favicon.ico");
+		olark.configure("CalloutBubble.offline_bubble_image_url", "css/images/favicon.ico");
+
+		$('.btn-help').click(function(){
+			olark('api.box.expand');
+		});
+
+		$('.btn-chat').click(function(){
+			olark('api.box.expand');
+		});
+
 		// sweetAlert
 		$win.load(function(){
 			console.log($('#newsletter-form').data('flash'));
