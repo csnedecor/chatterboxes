@@ -32,7 +32,9 @@
 		// Show Video
 		$('.video.cover').click(function(event){
 			event.preventDefault();
-			$('.video.hidden').removeClass('hidden');
+			var $video = $('.video.hidden');
+			$video.removeClass('hidden');
+			$video.find('iframe').attr('src', '//player.vimeo.com/video/89270569?autoplay=true');
 			$(event.currentTarget).addClass('hidden');
 		});
 
