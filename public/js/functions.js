@@ -12,10 +12,6 @@
 			olark('api.box.expand');
 		});
 
-		$('.btn-chat').click(function(){
-			olark('api.box.expand');
-		});
-
 		// sweetAlert
 		$win.load(function(){
 			console.log($('#newsletter-form').data('flash'));
