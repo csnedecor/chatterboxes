@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.1.4'
 
 gem 'rack'
 
@@ -26,3 +26,6 @@ gem 'gibbon'
 
 # Wrapper for the Olark live-chat service 
 gem 'rack-olark'
+
+# Production app server
+gem 'puma', group: :production
