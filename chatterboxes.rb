@@ -16,8 +16,6 @@ def send_mail(name, email, phone, message=nil)
     \t They can be reached via email at #{email} or by phone at #{phone}."
 
   Pony.mail({
-    # to: 'murphydbuffalo@gmail.com',
-    bcc: 'murphydbuffalo@gmail.com',
     to: 'brittany@teamchatterboxes.com',
     cc: 'megan@teamchatterboxes.com',
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
