@@ -124,7 +124,6 @@
 			$currentSlide.removeClass('current');
 
 			if(selection === 'forward'){
-        console.log("Going forward!");
 				$currentSlide.next().addClass('current');
 				$('.slider-team').find('.slide').first()
           .addClass('staff-hidden')
@@ -136,7 +135,6 @@
 				changeBio('forward');
 			} 
 			else {
-        console.log("Going backward!");
 				var $teamSlides = $('.slider-team').find('.slides');
 
 				// Find the last displayed slide and hide it
