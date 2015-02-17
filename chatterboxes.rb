@@ -9,10 +9,10 @@ Dotenv.load
 use Rack::Olark, id: ENV['OLARK_SITE_ID']
 
 def send_mail(name, email, phone, message=nil)
-  body =  
+  body =
     "Hi Brittany,\n
-    \t New message from #{name}:  \n 
-    \t #{message} \n 
+    \t New message from #{name}:  \n
+    \t #{message} \n
     \t They can be reached via email at #{email} or by phone at #{phone}."
 
   Pony.mail({
@@ -28,7 +28,7 @@ def send_mail(name, email, phone, message=nil)
       :port           => '587',
       :user_name      => ENV['MANDRILL_USERNAME'],
       :password       => ENV['MANDRILL_APIKEY'],
-      :authentication => :plain, 
+      :authentication => :plain,
       :domain         => "heroku.com"
     }
   })
@@ -45,7 +45,7 @@ def send_mail(name, email, phone, message=nil)
       :port           => '587',
       :user_name      => ENV['MANDRILL_USERNAME'],
       :password       => ENV['MANDRILL_APIKEY'],
-      :authentication => :plain, 
+      :authentication => :plain,
       :domain         => "heroku.com"
     }
   })
@@ -54,10 +54,10 @@ end
 def subscribe_to_mail_chimp(email, category)
   gibbon = Gibbon::API.new
   gibbon.lists.subscribe({
-    :id => ENV['MAILCHIMP_LIST_ID'], 
+    :id => ENV['MAILCHIMP_LIST_ID'],
     :email => { :email => email },
     :merge_vars => { :FNAME => category },
-    :double_optin => true 
+    :double_optin => true
   })
 rescue Gibbon::MailChimpError => error
   puts error.message
@@ -142,6 +142,25 @@ post '/services' do
   end
 end
 
+get '/ot' do
+  @therapy_id = params[:therapy_id] || 'none'
+  erb :ot, layout: :application
+end
+
+post '/ot' do
+  if presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
+    @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
+    @phone = params[:phone]
+    @email = params[:email]
+
+    send_mail(@full_name, @email, @phone)
+    redirect '/ot?mail=true'
+  else
+    puts 'Email error: blank fields'
+    redirect '/ot'
+  end
+end
+
 get '/started' do
   erb :started, layout: :application
 end
@@ -161,4 +180,3 @@ post '/started' do
   end
 
 end
-
