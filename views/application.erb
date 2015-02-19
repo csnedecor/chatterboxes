@@ -22,8 +22,9 @@
     ga('send', 'pageview');
 
   </script>
-  
+
   <div class="wrapper">
+    <div class="fixed">
     <header class="header" data-flash=<%= params[:mail]%>>
       <div class="row">
         <div class="medium-12 large-12 columns">
@@ -32,7 +33,7 @@
               <div class="header-contacts">
                 <span>
                   <i class="ico ico-phone"></i>
-              
+
                   617-969-8255
                 </span>
               </div><!-- /.header-contacts -->
@@ -46,15 +47,15 @@
                   <li>
                     <a href="https://www.facebook.com/TeamChatterboxes" target="_blank" class="link-facebook">facebook</a>
                   </li>
-                  
+
                   <li>
                     <a href="https://twitter.com/ChatterboxesSLP" target="_blank" class="link-twitter">twitter</a>
                   </li>
-                  
+
                   <li>
                     <a href="http://www.pinterest.com/chatterboxes/" target="_blank" class="link-pinterest">pinterest</a>
                   </li>
-                  
+
                   <li>
                     <a href="http://chatterboxesblog.blogspot.com/ " target="_blank" class="link-bing">bing</a>
                   </li>
@@ -63,9 +64,9 @@
 
               <div class="header-actions">
                 <span class="girl"></span>
-              
+
                 <a href="#" class="btn btn-help">Help</a>
-              
+
               </div><!-- /.header-actions -->
             </div><!-- /.header-right -->
           </div><!-- /.header-inner -->
@@ -75,30 +76,30 @@
       <nav class="nav">
         <div class="row">
           <div class="medium-12 large-12 columns">
-            
+
             <ul>
               <li>
                 <a href="/">Home</a>
               </li>
-              
+
               <li>
                 <a href="/about">About us</a>
               </li>
-              
+
               <li>
                 <a href="/started">Getting Started</a>
               </li>
             </ul>
-            
+
             <ul>
               <li>
                 <a href="services">Services</a>
               </li>
-              
+
   <!--             <li>
                 <a href="#">FAQ’s</a>
               </li>
-              
+
               <li>
                 <a href="#">Resources</a>
               </li>
@@ -111,9 +112,10 @@
         </div><!-- /.row -->
       </nav><!-- /.nav -->
     </header><!-- /.header -->
+  </div>
 
     <%= yield %>
-    
+
     <footer class="footer">
       <div class="row">
         <div class="medium-5 medium-offset-1 large-5 large-offset-1 columns">
@@ -126,22 +128,22 @@
               <li>
                 <a href="https://www.facebook.com/TeamChatterboxes" target="_blank" class="link-facebook">facebook</a>
               </li>
-              
+
               <li>
                 <a href="https://twitter.com/ChatterboxesSLP" target="_blank" class="link-twitter">twitter</a>
               </li>
-              
+
               <li>
                 <a href="http://www.pinterest.com/chatterboxes/" target="_blank" class="link-pinterest">pinterest</a>
               </li>
-              
+
               <li>
                 <a href="http://chatterboxesblog.blogspot.com/ " target="_blank" class="link-bing">bing</a>
               </li>
             </ul>
           </div><!-- /.socials -->
         </div><!-- /.medium-5 medium-offset-1 large-5 large-offset-1 columns -->
-        
+
         <div class="medium-6 large-6 columns">
           <h3>subscribe to our newsletter</h3>
           <p>Be the first to know. Sign up to stay informed.</p>
