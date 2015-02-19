@@ -68,7 +68,7 @@ def presence_valid?(*params)
   params.length > 0 && params.all? { |p| p.length > 0 }
 end
 
-get '/' do
+get '/?' do
   redirect '/home'
 end
 
