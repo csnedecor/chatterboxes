@@ -153,6 +153,30 @@
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{GOOGLE_API_KEY}">
 	</script>
 	<script type="text/javascript">
+		var points = [
+			['Newton Center', 42.331253, -71.193983, 'https://www.google.com/maps/place/10+Langley+Rd,+Newton+Centre,+MA+02459/@42.3312415,-71.193881,17z/data=!3m1!4b1!4m2!3m1!1s0x89e38278ef2ff84b:0x83244687a75888be'],
+			['Lexington Center', 42.448908, -71.228836, 'https://www.google.com/maps/place/Lexington+Center/@42.448586,-71.228688,17z/data=!3m1!4b1!4m2!3m1!1s0x89e39dd01290a417:0x827d57cb325cd9bc']
+		];
+
+	function setMarkers(map, locations) {
+		var shape = {
+			coord: [1, 1, 1, 20, 18, 20, 18 , 1],
+			type: 'poly'
+		};
+		for (var i = 0; i < locations.length; i++) {
+			var point = locations[i];
+			var marker = new google.maps.Marker({
+				position: new google.maps.LatLng(point[1], point[2]),
+				map: map,
+				shape:shape,
+				title: point[0],
+				url: point[3]
+			});
+			google.maps.event.addListener(marker, 'click', function() {
+				window.location.href = this.url;
+			});
+		}
+	}
 	function initialize() {
 		var mapOptions = {
 			center: { lat: 42.448908, lng: -71.228836 },
@@ -163,16 +187,18 @@
 		var map = new google.maps.Map(document.getElementById('map-canvas'),
 		mapOptions);
 
-		var marker = new google.maps.Marker({
-			position: { lat: 42.331253, lng: -71.193983 },
-			map: map,
-			title:"Hello World!"
-		});
-		var marker = new google.maps.Marker({
-			position: { lat: 42.448908, lng: -71.228836 },
-			map: map,
-			title:"Hello World!"
-		});
+		setMarkers(map, points);
+
+		// var marker = new google.maps.Marker({
+		// 	position: { lat: 42.331253, lng: -71.193983 },
+		// 	map: map,
+		// 	title:"Hello World!"
+		// });
+		// var marker = new google.maps.Marker({
+		// 	position: { lat: 42.448908, lng: -71.228836 },
+		// 	map: map,
+		// 	title:"Hello World!"
+		// });
 	}
 	google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
