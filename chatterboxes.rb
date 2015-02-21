@@ -4,16 +4,18 @@ require 'pony'
 require 'mailchimp'
 require 'gibbon'
 require 'rack-olark'
+require 'pry'
 
 Dotenv.load
 use Rack::Olark, id: ENV['OLARK_SITE_ID']
 
-def send_mail(name, email, phone, message=nil)
+def send_mail(name, email, phone, message=nil, location=nil)
   body =
     "Hi Brittany,\n
     \t New message from #{name}:  \n
     \t #{message} \n
-    \t They can be reached via email at #{email} or by phone at #{phone}."
+    \t They can be reached via email at #{email} or by phone at #{phone}.
+    \t Interested in: #{location} Location."
 
   Pony.mail({
     to: 'brittany@teamchatterboxes.com',
@@ -166,13 +168,14 @@ get '/started' do
 end
 
 post '/started' do
-  if presence_valid?(params[:name], params[:message], params[:email], params[:phone])
+  if presence_valid?(params[:name], params[:message], params[:email], params[:phone], params[:location])
     @full_name = "#{params[:name].capitalize}"
     @phone = params[:phone]
     @email = params[:email]
     @message = params[:message]
+    @location = params[:location]
 
-    send_mail(@full_name, @email, @phone, @message)
+    send_mail(@full_name, @email, @phone, @message, @location)
     redirect '/started?mail=true'
   else
     puts 'Email error: blank fields'
