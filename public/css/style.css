@@ -92,7 +92,7 @@ p { margin: 0; }
 .header-actions .btn-sitemap { margin-top: 20px; }
 .header-actions .btn-help:hover,
 .header-actions .btn-sitemap:hover { color: #605f5b; text-decoration: underline; }
-.header-actions .btn-chat:hover { opacity: 0.8; } 
+.header-actions .btn-chat:hover { opacity: 0.8; }
 
 .header .socials { float: left; padding-top: 9px; }
 
@@ -305,7 +305,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-testimonials .slides { list-style: none outside none; }
 .slider-testimonials .slide { float: left; width: 1045px; }
 
-.slider-testimonials .slide-image { float: left; width: 260px; height: 280px; 
+.slider-testimonials .slide-image { float: left; width: 260px; height: 280px;
 	padding: 7px 0 0 7px; margin-right: 50px; }
 
 /*  background: url(images/sprite.png) no-repeat 0px -209px; */
@@ -364,9 +364,9 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .contacts-alt p { padding-left: 0; margin: 0 0 8px; }
 .contacts-alt h4 { margin-bottom: 12px; }
 .contacts-alt .contacts-avatar { float: left; padding-top: 12px; margin-right: 29px; }
-.contacts-alt .contacts-avatar img { border-radius: 7px; 
-																		 -webkit-border-radius: 7px; 
-																		 -moz-border-radius: 7px; 
+.contacts-alt .contacts-avatar img { border-radius: 7px;
+																		 -webkit-border-radius: 7px;
+																		 -moz-border-radius: 7px;
 																		 box-shadow: 1px 1px 4px #76ad3b;
 																	 }
 
@@ -410,7 +410,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 	#Form Sign
 ========================================================================== */
 .form-sign { padding: 42px 42px 23px; margin-top: 9px; background: url(images/form-pattern.png) 0 0; }
-.form-sign .form-inner { padding: 0 17px 18px 15px; border: 1px solid #d2e4ce; border-radius: 4px; background: rgba(255, 255, 255, 0.11); } 
+.form-sign .form-inner { padding: 0 17px 18px 15px; border: 1px solid #d2e4ce; border-radius: 4px; background: rgba(255, 255, 255, 0.11); }
 .form-sign .form-head { padding-top: 16px; margin-bottom: 13px; }
 .form-sign h3 { font-family: 'Chomp', sans-serif; font-size: 32px; color: #fff; letter-spacing: 0.2em; text-align: center; }
 
