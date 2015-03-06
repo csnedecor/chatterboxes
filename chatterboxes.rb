@@ -183,3 +183,7 @@ post '/started' do
   end
 
 end
+
+get '/privacy' do
+  erb :privacy, layout: :application
+end
