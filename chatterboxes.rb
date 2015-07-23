@@ -11,14 +11,14 @@ use Rack::Olark, id: ENV['OLARK_SITE_ID']
 
 def send_mail(name, email, phone, message=nil, location=nil)
   body =
-    "Hi Brittany,\n
+    "Hi Heather,\n
     \t New message from #{name}:  \n
     \t #{message} \n
     \t They can be reached via email at #{email} or by phone at #{phone}.
     \t Interested in: #{location} Location."
 
   Pony.mail({
-    to: 'brittany@teamchatterboxes.com',
+    to: 'heather@teamchatterboxes.com',
     cc: 'megan@teamchatterboxes.com',
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
