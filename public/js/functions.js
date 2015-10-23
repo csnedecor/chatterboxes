@@ -33,9 +33,12 @@
 		$('.video.cover').click(function(event){
 			event.preventDefault();
 			var $video = $('.video.hidden');
+			var $logo = $('.logo');
 			$video.removeClass('hidden');
-			$video.find('iframe').attr('src', '//www.youtube.com/embed/TOSezegfMeQ?autoplay=true');
+			$video.find('iframe').attr('src', '//www.youtube.com/embed/TOSezegfMeQ?autoplay=true&rel=0');
 			$(event.currentTarget).addClass('hidden');
+			$video.removeClass('cover');
+			$logo.fadeOut(1000);
 		});
 
 		// Fullscreener
