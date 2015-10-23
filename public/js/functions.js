@@ -34,7 +34,7 @@
 			event.preventDefault();
 			var $video = $('.video.hidden');
 			$video.removeClass('hidden');
-			$video.find('iframe').attr('src', '//player.vimeo.com/video/89270569?autoplay=true');
+			$video.find('iframe').attr('src', '//www.youtube.com/embed/TOSezegfMeQ?autoplay=true');
 			$(event.currentTarget).addClass('hidden');
 		});
 
@@ -86,14 +86,14 @@
 			var $currentBio = $('.section-current');
 			$currentBio.removeClass('section-current')
 				.addClass('section-hidden').hide();
-	
+
 			if(selection === 'forward'){
 				$currentBio.next().fadeIn('slow')
 					.removeClass('section-hidden').addClass('section-current');
-					
+
 				$('.bio-paragraphs').find('.section').first().detach()
 					.appendTo('.bio-paragraphs');
-			} 
+			}
 		  else if(selection === 'backward'){
 				$('.bio-paragraphs').find('.section').last().detach()
 					.prependTo('.bio-paragraphs');
@@ -133,7 +133,7 @@
         $lastSlideDisplayed.next().removeClass('staff-hidden');
 
 				changeBio('forward');
-			} 
+			}
 			else {
 				var $teamSlides = $('.slider-team').find('.slides');
 
@@ -173,7 +173,7 @@
 			var accordionItemSelector = '.accordion-section';
 			var toggleSelector = '.accordion-head';
 			var $accordionBody = $('.accordion-head').next();
-		 
+
 		 	var therapyId = $('.accordion-therapy').data('therapy-id');
 		 	$win.load(function(){
 			 	if( therapyId !== 'none'){
@@ -183,16 +183,16 @@
 
 
 			$(toggleSelector).on('click', function(e) {
-		 
+
 				$(this).next().slideToggle();
 
 				if($accordionBody.is(":visible")) {
 					$(this).children('.btn-plus').toggleClass('btn-minus');
-				} 
+				}
 
 				event.preventDefault();
 			});
-		 
+
 		})();
 	});
 })(jQuery, window, document);
