@@ -13,13 +13,13 @@
       <p><span>Hi Heather,</span></p>
       <p>New appointment request from <%= @full_name %>.</p>
       <% if !@date.empty? || !@date.nil? %>
-        <p>Date: @date</p>
+        <p>Date: <%= @date %></p>
       <% end %>
       <% if !@time.empty? || !@time.nil? %>
-        <p>Time: @time</p>
+        <p>Time: <%= @time %></p>
       <% end %>
       <% if !@service.empty? || !@service.nil? %>
-        <p>Service: @service</p>
+        <p>Service: <%= @service %></p>
       <% end %>
       <p>
         They can be reached at:
