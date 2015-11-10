@@ -56,7 +56,7 @@ end
 def send_appointment_request(name, email, phone, date=nil, time=nil, service=nil)
 
   Pony.mail({
-    to: 'coriannas@yahoo.com.com',
+    to: 'coriannas@yahoo.com',
     # cc: 'megan@teamchatterboxes.com',
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
