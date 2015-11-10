@@ -55,13 +55,17 @@ end
 
 def send_appointment_request(name, email, phone, date=nil, time=nil, service=nil)
 
+  # Code for testing in development
+  # Pony.mail :to => "coriannas@yahoo.com", :via =>:sendmail,
+  #       :from => "Chatterboxes-Web-Services@teamchatterboxes.com", :subject => "New message!",
+  #       :html_body => erb(:appointment_email)
+
   Pony.mail({
-    to: 'coriannas@yahoo.com',
-    # cc: 'megan@teamchatterboxes.com',
+    to: 'heather@teamchatterboxes.com',
+    cc: 'megan@teamchatterboxes.com',
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
     html_body: erb(:appointment_email),
-    # body: body,
     via: :smtp,
     via_options: {
       :address        => 'smtp.mandrillapp.com',
