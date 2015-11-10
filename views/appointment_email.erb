@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chatterboxes - Boston, MA Speech Pathology and Therapy</title>
+</head>
+
+<body>
+  <div class="intro-content">
+    <div class="row">
+      <h1>Chatterboxes</h1>
+      <h3>Speech Pathology</h3>
+      <p><span>Hi Heather,</span></p>
+      <p>New appointment request from <%= @full_name %>.</p>
+      <% if !@date.empty? || !@date.nil? %>
+        <p>Date: @date</p>
+      <% end %>
+      <% if !@time.empty? || !@time.nil? %>
+        <p>Time: @time</p>
+      <% end %>
+      <% if !@service.empty? || !@service.nil? %>
+        <p>Service: @service</p>
+      <% end %>
+      <p>
+        They can be reached at:
+        <ul>
+          <li>Phone: <%=  @phone %></li>
+          <li>Email: <%= @email %> </li>
+        </ul>
+      </p>
+    </div><!-- /.row -->
+  </div><!-- /.intro-content -->
+</body>
+</html>
