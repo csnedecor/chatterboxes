@@ -53,6 +53,44 @@ def send_mail(name, email, phone, message=nil, location=nil)
   })
 end
 
+def send_appointment_request(name, email, phone, date=nil, time=nil, service=nil)
+
+  Pony.mail({
+    to: 'coriannas@yahoo.com.com',
+    # cc: 'megan@teamchatterboxes.com',
+    from: "Chatterboxes-Web-Services@teamchatterboxes.com",
+    subject: "New message!",
+    html_body: erb(:appointment_email),
+    # body: body,
+    via: :smtp,
+    via_options: {
+      :address        => 'smtp.mandrillapp.com',
+      :port           => '587',
+      :user_name      => ENV['MANDRILL_USERNAME'],
+      :password       => ENV['MANDRILL_APIKEY'],
+      :authentication => :plain,
+      :domain         => "heroku.com"
+    }
+  })
+
+  Pony.mail({
+    to: email,
+    from: "Chatterboxes-Web-Services@teamchatterboxes.com",
+    subject: "Your message was sent!",
+    html_body: erb(:confirmation_email),
+    body: "Thank you for contacting Chatterboxes! A member of our team will be in touch with you shortly.",
+    via: :smtp,
+    via_options: {
+      :address        => 'smtp.mandrillapp.com',
+      :port           => '587',
+      :user_name      => ENV['MANDRILL_USERNAME'],
+      :password       => ENV['MANDRILL_APIKEY'],
+      :authentication => :plain,
+      :domain         => "heroku.com"
+    }
+  })
+end
+
 def subscribe_to_mail_chimp(email, category)
   gibbon = Gibbon::API.new
   gibbon.lists.subscribe({
@@ -89,16 +127,33 @@ get '/home' do
 end
 
 post '/home' do
-  if presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
-    @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
-    @phone = params[:phone]
-    @email = params[:email]
+  if params[:appointment_submit]
+    if presence_valid?(params[:appointment_name], params[:appointment_email], params[:appointment_phone])
+      @full_name = params[:appointment_name]
+      @phone = params[:appointment_phone]
+      @email = params[:appointment_email]
+      @date = params[:appointment_date]
+      @time = params[:appointment_time]
+      @service = params[:appointment_service]
 
-    send_mail(@full_name, @email, @phone)
-    redirect '/home?mail=true'
+      send_appointment_request(@full_name, @email, @phone, @date, @time, @service)
+      redirect '/home?mail=true'
+    else
+      puts 'Email error: blank fields'
+      redirect '/home'
+    end
   else
-    puts 'Email error: blank fields'
-    redirect '/home'
+    if presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
+      @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
+      @phone = params[:phone]
+      @email = params[:email]
+
+      send_mail(@full_name, @email, @phone)
+      redirect '/home?mail=true'
+    else
+      puts 'Email error: blank fields'
+      redirect '/home'
+    end
   end
 end
 
