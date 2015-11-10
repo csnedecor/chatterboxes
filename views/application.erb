@@ -84,13 +84,77 @@
               <div class="header-actions">
                 <span class="girl"></span>
 
-                <a href="#" class="btn btn-help">Help</a>
+                <a href="#appointment-popup" class="appointment-btn">Make an Appointment</a>
 
               </div><!-- /.header-actions -->
             </div><!-- /.header-right -->
           </div><!-- /.header-inner -->
         </div><!-- /.medium-12 large-12 columns -->
       </div><!-- /.row -->
+
+      <div id="appointment-popup">
+          <div class="row">
+            <div class="medium-12 large-12 columns">
+              <div class="form-message">
+                <form action="/home" method="post">
+                  <header class="form-head">
+                    <h3 id='contact-form-header'>Make an Appointment</h3>
+                  </header><!-- /.form-head -->
+
+                  <div class="form-body">
+                    <div class="row">
+                      <div class="medium-6 large-6 columns">
+                        <div class="form-row">
+                          <div class="form-controls">
+                            <input type="text" class="field" id="name" placeholder="Name (required)" name="appointment_name" required/>
+                          </div><!-- /.form-controls -->
+                        </div><!-- /.form-row -->
+
+                        <div class="form-row">
+                          <div class="form-controls">
+                            <input type="email" class="field" id="mail3" placeholder="Email (required)" name="appointment_email" required/>
+                          </div><!-- /.form-controls -->
+                        </div><!-- /.form-row -->
+
+                        <div class="form-row">
+                          <div class="form-controls">
+                            <input type="tel" class="field" id="mobile" placeholder="Phone (Required)" name="appointment_phone" required/>
+                          </div><!-- /.form-controls -->
+                        </div><!-- /.form-row -->
+
+                      </div><!-- /.medium-6 large-6 columns -->
+
+                      <div class="medium-6 large-6 columns">
+
+                        <div class="form-row">
+                          <div class="form-controls">
+                            <input type="date" class="field" id="date" placeholder="Date Requested (mm/dd/yyyy)" name="appointment_date" required/>
+                          </div><!-- /.form-controls -->
+
+                        </div><!-- /.form-row -->
+                        <div class="form-row">
+                          <div class="form-controls">
+                            <input type="text" class="field" id="time" placeholder="Time Requested" name="appointment_time" required/>
+                          </div><!-- /.form-controls -->
+                        </div><!-- /.form-row -->
+
+                        <div class="form-row">
+                          <div class="form-controls">
+                            <textarea name="appointment_service" id="service" placeholder="Service Requested" cols="30" rows="10" class="textarea" required></textarea>
+                          </div><!-- /.form-controls -->
+                        </div><!-- /.form-row -->
+
+                        <div class="form-actions">
+                          <input type="submit" value="Submit" class="form-btn" name="appointment_submit" />
+                        </div><!-- /.form-actions -->
+                      </div><!-- /.medium-6 large-6 columns -->
+                    </div><!-- /.row -->
+                  </div><!-- /.form-body -->
+                </form>
+              </div><!-- /.form-message -->
+            </div><!-- /.medium-12 large-12 columns -->
+          </div><!-- /.row -->
+        </div><!-- /#appointment-popup -->
 
       <nav class="nav">
         <div class="row">
