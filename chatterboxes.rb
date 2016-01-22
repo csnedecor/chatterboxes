@@ -18,9 +18,8 @@ def send_mail(name, email, phone, message=nil, location=nil, therapy_type=nil)
     \t Interested in: #{location} Location."
 
   Pony.mail({
-    # to: 'heather@teamchatterboxes.com',
-    # cc: 'megan@teamchatterboxes.com',
-    to: 'cori.snedecor@gmail.com',
+    to: 'heather@teamchatterboxes.com',
+    cc: 'megan@teamchatterboxes.com',
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
     html_body: erb(:message_email),
