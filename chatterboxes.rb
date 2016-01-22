@@ -9,6 +9,9 @@ require 'pry'
 Dotenv.load
 use Rack::Olark, id: ENV['OLARK_SITE_ID']
 
+# Mandrill app on heroku only allows 25 emails to be sent per hour,
+# so there will be a delay when testing emails if you send more than 25.
+
 def send_mail(name, email, phone, message=nil, location=nil, therapy_type=nil)
   body =
     "Hi Heather,\n
