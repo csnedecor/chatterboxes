@@ -9,7 +9,7 @@ require 'pry'
 Dotenv.load
 use Rack::Olark, id: ENV['OLARK_SITE_ID']
 
-def send_mail(name, email, phone, message=nil, location=nil)
+def send_mail(name, email, phone, message=nil, location=nil, therapy_type=nil)
   body =
     "Hi Heather,\n
     \t New message from #{name}:  \n
@@ -18,8 +18,9 @@ def send_mail(name, email, phone, message=nil, location=nil)
     \t Interested in: #{location} Location."
 
   Pony.mail({
-    to: 'heather@teamchatterboxes.com',
-    cc: 'megan@teamchatterboxes.com',
+    # to: 'heather@teamchatterboxes.com',
+    # cc: 'megan@teamchatterboxes.com',
+    to: 'cori.snedecor@gmail.com',
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
     html_body: erb(:message_email),
@@ -194,8 +195,9 @@ post '/services' do
     @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
     @phone = params[:phone]
     @email = params[:email]
+    @therapy_type = params[:therapy_type]
 
-    send_mail(@full_name, @email, @phone)
+    send_mail(@full_name, @email, @phone, @therapy_type)
     redirect '/services?mail=true'
   else
     puts 'Email error: blank fields'
@@ -213,8 +215,9 @@ post '/ot' do
     @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
     @phone = params[:phone]
     @email = params[:email]
+    @therapy_type = params[:therapy_type]
 
-    send_mail(@full_name, @email, @phone)
+    send_mail(@full_name, @email, @phone, @therapy_type)
     redirect '/ot?mail=true'
   else
     puts 'Email error: blank fields'
