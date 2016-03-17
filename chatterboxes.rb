@@ -251,3 +251,41 @@ end
 get '/privacy' do
   erb :privacy, layout: :application
 end
+
+
+# Staff Bio pages
+get '/about/megan' do
+  erb :"about/megan", layout: :application
+end
+
+get '/about/alexandra' do
+  erb :"about/alexandra", layout: :application
+end
+
+get '/about/elizabeth' do
+  erb :"about/elizabeth", layout: :application
+end
+
+get '/about/allison' do
+  erb :"about/allison", layout: :application
+end
+
+get '/about/heather' do
+  erb :"about/heather", layout: :application
+end
+
+get '/about/suzie' do
+  erb :"about/suzie", layout: :application
+end
+
+get '/about/briana' do
+  erb :"about/briana", layout: :application
+end
+
+get '/about/erika' do
+  erb :"about/erika", layout: :application
+end
+
+get '/about/annemarie' do
+  erb :"about/annemarie", layout: :application
+end
