@@ -311,6 +311,9 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .section-therapy .section-head p,
 .section-team .section-head p,
 .section-office .section-head p { font-size: 18px; color: #4b4b51; }
+.section-therapy .section-head.teletherapy p{
+	margin-top: 20px;
+}
 
 .therapy-items { overflow: hidden; margin-right: -56px; list-style: none outside none; }
 .therapy-item { float: left; margin: 0 52px 42px 0; }
@@ -374,6 +377,8 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 
 .accordion-therapy .accordion-image { overflow: hidden; float: left; width: 308px; height: 251px; padding-top: 13px; border-radius: 4px; margin-right: 23px; }
 .accordion-therapy .accordion-content { overflow: hidden; padding-top: 9px; }
+.accordion-therapy .accordion-content a{ color: #29a8e1; }
+.accordion-therapy .accordion-content a:hover{ text-decoration: underline; }
 .accordion-therapy .accordion-content p { font-family: 'Lato', sans-serif; font-size: 18px; line-height: 1.89; color: #4f4f4f; letter-spacing: 0.025em; }
 
 .accordion-therapy .accordion-form { clear: both; }

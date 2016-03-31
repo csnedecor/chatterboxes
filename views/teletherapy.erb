@@ -1,0 +1,258 @@
+<div class="intro intro-services">
+  <div class="intro-image">
+    <img src="css/images/teletherapy-cover.png" width="1600" alt="" />
+  </div><!-- /.intro-image -->
+
+  <div class="intro-content">
+    <div class="row">
+      <h1>Teletherapy</h1>
+    </div><!-- /.row -->
+  </div><!-- /.intro-content -->
+</div><!-- /.intro -->
+
+<div class="container">
+  <div class="container-body">
+    <section class="section section-therapy section-therapy-alt">
+      <div class="row">
+        <div class="medium-12 large-12 columns">
+          <header class="section-head teletherapy">
+            <h2>Our Therapy</h2>
+
+            <p>Chatterboxes' award winning therapy in the comfort of your own home or school via Teletherapy.</p>
+
+            <p>Live video platform allows us to help children who may not have access to a local Speech-Language Pathologist.  Through either a computer, ipad, or a variety of other mobile devices, our SLP's provide 1:1 therapy and evaluation services to patients no matter their location.</p>
+
+            <p>Through teletherapy we are able to increase accessibility of speech-language pathology services to children dealing with speech, language and feeding concerns.</p>
+
+          </header><!-- /.section-head -->
+
+          <div class="section-body">
+            <div class="accordion-therapy" data-therapy-id=<%=@therapy_id%>>
+              <section class="accordion-section">
+                <header class="accordion-head">
+                  <a href="#" class="btn btn-plus"></a>
+
+                  <h4 id='teletherapy'>What is Teletherapy?</h4>
+                </header><!-- /.accordion-head -->
+
+                <div class="accordion-body">
+                  <div class="accordion-image">
+                    <!-- <img src="css/images/temp/motor_skills.jpg" height="238" width="308" alt="Motor Skills" /> -->
+                  </div><!-- /.accordion-image -->
+
+                  <div class="accordion-content">
+                    <p>
+                      Teletherapy is the live delivery of our best-in-class speech-language & feeding services in the convenience of your home or school by live video online (via an internet connection) <a href="/about">with our team of Speech-Language Pathologists</a>.  Your child meets 1-on-1 with their SLP via video conference. No additional technical set-up, knowledge or software is required by the parent.
+                    </p>
+
+                  </div><!-- /.accordion-content -->
+
+                  <div class="accordion-form">
+                    <div class="form-schedule form-schedule-alt">
+                      <form action="/teletherapy" method="post">
+                        <header class="form-head">
+                          <h3>Schedule a Consultation</h3>
+                        </header><!-- /.form-head -->
+
+                        <div class="form-body">
+                          <div class="form-row">
+                            <div class="form-controls">
+                              <input type="text" class="field" placeholder="First name" name="first_name" id="fname" required />
+
+                              <input type="text" class="field" placeholder="Last name" name="last_name" id="lname" required />
+
+                              <input type="email" class="field" placeholder="Email address" name="email" id="mail" required />
+
+                              <input type="tel" class="field" placeholder="Phone" name="phone" id="phone" required/>
+
+                              <input type="hidden" name="therapy_type" value="teletherapy" />
+                            </div><!-- /.form-controls -->
+                          </div><!-- /.form-row -->
+                        </div><!-- /.form-body -->
+
+                        <div class="form-actions">
+                          <input type="submit" value="Submit" class="form-btn" />
+                        </div><!-- /.form-actions -->
+                      </form>
+                    </div><!-- /.form-schedule -->
+                  </div><!-- /.accordion-form -->
+                </div><!-- /.accordion-body -->
+              </section><!-- /.accordion-section -->
+
+              <section class="accordion-section">
+                <header class="accordion-head">
+                  <a href="#" class="btn btn-plus"></a>
+
+                  <h4 id='teletherapy_benefits'>Who can benefit from Teletherapy?</h4>
+                </header><!-- /.accordion-head -->
+
+                <div class="accordion-body">
+                  <div class="accordion-image">
+                    <!-- <img src="css/images/temp/visual_motor.jpg" height="238" width="308" alt="Visual Motor Integration" /> -->
+                  </div><!-- /.accordion-image -->
+
+                  <div class="accordion-content">
+                    <ul>
+                      <li>Homeschooled Students</li>
+                      <li>Private Schools or schools without on-staff Speech-Language Pathologists</li>
+                      <li>Children in rural areas that lack convenient access to an SLP</li>
+                      <li>Families who prefer the convenience of in-home sessions</li>
+                    </ul>
+                  </div><!-- /.accordion-content -->
+
+                  <div class="accordion-form">
+                    <div class="form-schedule form-schedule-alt">
+                      <form action="/teletherapy" method="post">
+                        <header class="form-head">
+                          <h3>Schedule a Consultation</h3>
+                        </header><!-- /.form-head -->
+
+                        <div class="form-body">
+                          <div class="form-row">
+                            <div class="form-controls">
+                              <input type="text" class="field" placeholder="First name" name="first_name" id="fname" required />
+
+                              <input type="text" class="field" placeholder="Last name" name="last_name" id="lname" required />
+
+                              <input type="email" class="field" placeholder="Email address" name="email" id="mail" required />
+
+                              <input type="tel" class="field" placeholder="Phone" name="phone" id="phone" required/>
+
+                              <input type="hidden" name="therapy_type" value="teletherapy" />
+                            </div><!-- /.form-controls -->
+                          </div><!-- /.form-row -->
+                        </div><!-- /.form-body -->
+
+                        <div class="form-actions">
+                          <input type="submit" value="Submit" class="form-btn" />
+                        </div><!-- /.form-actions -->
+                      </form>
+                    </div><!-- /.form-schedule -->
+                  </div><!-- /.accordion-form -->
+                </div><!-- /.accordion-body -->
+              </section><!-- /.accordion-section -->
+
+              <section class="accordion-section">
+                <header class="accordion-head">
+                  <a href="#" class="btn btn-plus"></a>
+
+                  <h4 id='teletherapy_providers'>Who provides Teletherapy at Chatterboxes?</h4>
+                </header><!-- /.accordion-head -->
+
+                <div class="accordion-body">
+                  <div class="accordion-image">
+                    <!-- <img src="css/images/temp/ot_feeding.jpg" height="238" width="308" alt="Feeding" /> -->
+                  </div><!-- /.accordion-image -->
+
+                  <div class="accordion-content">
+                    <p>
+                      Our current teletherapy team includes a small group of four passionate Speech-Language Pathologists. Our practice manager, Heather Hachenburg, M.S., CCC-SLP, works closely with each family to ensure compatibility.
+                    </p>
+                  </div><!-- /.accordion-content -->
+
+                  <div class="accordion-form">
+                    <div class="form-schedule form-schedule-alt">
+                      <form action="/teletherapy" method="post">
+                        <header class="form-head">
+                          <h3>Schedule a Consultation</h3>
+                        </header><!-- /.form-head -->
+
+                        <div class="form-body">
+                          <div class="form-row">
+                            <div class="form-controls">
+                              <input type="text" class="field" placeholder="First name" name="first_name" id="fname" required />
+
+                              <input type="text" class="field" placeholder="Last name" name="last_name" id="lname" required />
+
+                              <input type="email" class="field" placeholder="Email address" name="email" id="mail" required />
+
+                              <input type="tel" class="field" placeholder="Phone" name="phone" id="phone" required/>
+
+                              <input type="hidden" name="therapy_type" value="teletherapy" />
+                            </div><!-- /.form-controls -->
+                          </div><!-- /.form-row -->
+                        </div><!-- /.form-body -->
+
+                        <div class="form-actions">
+                          <input type="submit" value="Submit" class="form-btn" />
+                        </div><!-- /.form-actions -->
+                      </form>
+                    </div><!-- /.form-schedule -->
+                  </div><!-- /.accordion-form -->
+                </div><!-- /.accordion-body -->
+              </section><!-- /.accordion-section -->
+
+              <section class="accordion-section">
+                <header class="accordion-head">
+                  <a href="#" class="btn btn-plus"></a>
+
+                  <h4 id='start_teletherapy'>How can I get started?</h4>
+                </header><!-- /.accordion-head -->
+
+                <div class="accordion-body">
+                  <div class="accordion-image">
+                    <!-- <img src="css/images/temp/self_care.jpg" height="238" width="308" alt="Self Care" /> -->
+                  </div><!-- /.accordion-image -->
+
+                  <div class="accordion-content">
+                    <p>
+                      It's easy!  Contact Heather at 617-969-8255 or via email at <a href="mailto:heather@teamchatterboxes.com? subject=Schedule%20Teletherapy%20Consultation">heather@teamchatterboxes.com</a> to schedule a complimentary phone consultation for your child today.
+                    </p>
+                  </div><!-- /.accordion-content -->
+
+                  <div class="accordion-form">
+                    <div class="form-schedule form-schedule-alt">
+                      <form action="/teletherapy" method="post">
+                        <header class="form-head">
+                          <h3>Schedule a Consultation</h3>
+                        </header><!-- /.form-head -->
+
+                        <div class="form-body">
+                          <div class="form-row">
+                            <div class="form-controls">
+                              <input type="text" class="field" placeholder="First name" name="first_name" id="fname" required />
+
+                              <input type="text" class="field" placeholder="Last name" name="last_name" id="lname" required />
+
+                              <input type="email" class="field" placeholder="Email address" name="email" id="mail" required />
+
+                              <input type="tel" class="field" placeholder="Phone" name="phone" id="phone" required/>
+
+                              <input type="hidden" name="therapy_type" value="teletherapy" />
+                            </div><!-- /.form-controls -->
+                          </div><!-- /.form-row -->
+                        </div><!-- /.form-body -->
+
+                        <div class="form-actions">
+                          <input type="submit" value="Submit" class="form-btn" />
+                        </div><!-- /.form-actions -->
+                      </form>
+                    </div><!-- /.form-schedule -->
+                  </div><!-- /.accordion-form -->
+                </div><!-- /.accordion-body -->
+              </section><!-- /.accordion-section -->
+
+          <div class="section-actions">
+            <a href="/contact" class="btn btn-more">
+              <span>Contact us</span>
+
+              <i class="ico ico-more"></i>
+            </a>
+          </div><!-- /.section-actions -->
+        </div><!-- /.medium-12 large-12 columns -->
+      </div><!-- /.row -->
+    </section><!-- /.section section-therapy -->
+  </div><!-- /.container-body -->
+
+  <div class="container-images">
+    <img src="css/images/cloud.png" class="cloud" alt="" width="163" height="107" />
+
+    <img src="css/images/image-birds-small.png" class="birds-small" alt="" width="223" height="132" />
+
+    <img src="css/images/image-birds-big.png" class="birds-large" alt="" width="132" height="123" />
+
+    <img src="css/images/cloud-big.png" class="cloud-large" height="183" width="280" alt="" />
+
+    <img src="css/images/cloud-small.png" class="cloud-small" height="79" width="121" alt="" />
+  </div><!-- /.container-images -->
+</div><!-- /.container -->

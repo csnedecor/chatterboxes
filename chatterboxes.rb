@@ -60,8 +60,6 @@ def send_appointment_request(name, email, phone, date=nil, time=nil, service=nil
 
   # Code for testing in development
   # Pony.mail :to => "coriannas@yahoo.com", :via =>:sendmail,
-  #       :from => "Chatterboxes-Web-Services@teamchatterboxes.com", :subject => "New message!",
-  #       :html_body => erb(:appointment_email)
 
   Pony.mail({
     to: 'heather@teamchatterboxes.com',
@@ -224,6 +222,26 @@ post '/ot' do
   else
     puts 'Email error: blank fields'
     redirect '/ot'
+  end
+end
+
+get '/teletherapy' do
+  @therapy_id = params[:therapy_id] || 'none'
+  erb :teletherapy, layout: :application
+end
+
+post '/teletherapy' do
+  if presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
+    @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
+    @phone = params[:phone]
+    @email = params[:email]
+    @therapy_type = params[:therapy_type]
+
+    send_mail(@full_name, @email, @phone, @therapy_type)
+    redirect '/teletherapy?mail=true'
+  else
+    puts 'Email error: blank fields'
+    redirect '/teletherapy'
   end
 end
 
