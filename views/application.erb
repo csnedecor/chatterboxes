@@ -20,6 +20,7 @@
   <noscript>
     <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=465808463575924&amp;ev=PixelInitialized" />
   </noscript>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8" />
   <meta description='Chatterboxes Speech Pathology offers the best in speech-language therapy for the Boston area.'>
   <title>Chatterboxes - Boston, MA Speech Pathology and Therapy</title>
@@ -43,163 +44,155 @@
   </script>
 
   <div class="wrapper">
-    <div class="fixed">
     <header class="header" data-flash=<%= params[:mail]%>>
       <div class="row">
-        <div class="medium-12 large-12 columns">
+        <div class="large-6 medium-6 small-12 columns">
           <div class="header-inner">
-            <div class="header-left">
-              <div class="header-contacts">
-                <span>
-                  <i class="ico ico-phone"></i>
+            <div class="header-contacts">
+              <span>
+                <i class="ico ico-phone"></i>
 
-                  617-969-8255
-                </span>
-              </div><!-- /.header-contacts -->
-            </div><!-- /.header-left -->
-
-            <a href="/" class="logo">ChatterBoxes</a>
-
-            <div class="header-right">
-              <div class="socials">
-                <ul>
-                  <li>
-                    <a href="https://www.facebook.com/TeamChatterboxes" target="_blank" class="link-facebook">facebook</a>
-                  </li>
-
-                  <li>
-                    <a href="https://twitter.com/ChatterboxesSLP" target="_blank" class="link-twitter">twitter</a>
-                  </li>
-
-                  <li>
-                    <a href="http://www.pinterest.com/chatterboxes/" target="_blank" class="link-pinterest">pinterest</a>
-                  </li>
-
-                  <li>
-                    <a href="http://blog.teamchatterboxes.com/ " target="_blank" class="link-bing">bing</a>
-                  </li>
-                </ul>
-              </div><!-- /.socials -->
-
-              <div class="header-actions">
-                <span class="girl"></span>
-
-                <a href="#appointment-popup" class="appointment-btn">Make an Appointment</a>
-
-              </div><!-- /.header-actions -->
-            </div><!-- /.header-right -->
+                617-969-8255
+              </span>
+            </div><!-- /.header-contacts -->
           </div><!-- /.header-inner -->
-        </div><!-- /.medium-12 large-12 columns -->
+        </div><!-- /.medium-6 columns medium-right small-centered -->
+
+        <div class="large-6 medium-6 small-8 columns">
+          <div class="header-inner">
+            <div class="socials">
+              <ul>
+                <li>
+                  <a href="https://www.facebook.com/TeamChatterboxes" target="_blank" class="link-facebook">facebook</a>
+                </li>
+
+                <li>
+                  <a href="https://twitter.com/ChatterboxesSLP" target="_blank" class="link-twitter">twitter</a>
+                </li>
+
+                <li>
+                  <a href="http://www.pinterest.com/chatterboxes/" target="_blank" class="link-pinterest">pinterest</a>
+                </li>
+
+                <li>
+                  <a href="http://blog.teamchatterboxes.com/ " target="_blank" class="link-bing">bing</a>
+                </li>
+              </ul>
+            </div><!-- /.socials -->
+          </div>
+        </div>
+
+        <div class="large-6 medium-6 small-4 columns">
+          <div class="header-inner second-row">
+            <div class="boston-best-medal">
+              <img src="/css/images/2015BostonBestMedal.jpg" alt="2015 Boston Parents' Paper Best of the Best in the Speech & Language Category Medal">
+            </div>
+          </div><!-- /.header-inner -->
+        </div><!-- /.large-6 medium-6 small-12 columns -->
+
+        <div class="large-6 medium-6 small-12 columns">
+          <div class="header-inner second-row">
+            <div class="header-actions">
+              <span class="girl"></span>
+              <a href="#appointment-popup" class="appointment-btn">Make an Appointment</a>
+            </div><!-- /.header-actions -->
+          </div><!-- /.header-inner -->
+        </div><!-- /.medium-6 columns medium-left small-centered -->
+
       </div><!-- /.row -->
 
+
       <div id="appointment-popup">
-          <div class="row">
-            <div class="medium-12 large-12 columns">
-              <div class="form-message">
-                <form action="/home" method="post">
-                  <header class="form-head">
-                    <h3 id='contact-form-header'>Make an Appointment</h3>
-                  </header><!-- /.form-head -->
-
-                  <div class="form-body">
-                    <div class="row">
-                      <div class="medium-6 large-6 columns">
-                        <div class="form-row">
-                          <div class="form-controls">
-                            <input type="text" class="field" id="name" placeholder="Name (required)" name="appointment_name" required/>
-                          </div><!-- /.form-controls -->
-                        </div><!-- /.form-row -->
-
-                        <div class="form-row">
-                          <div class="form-controls">
-                            <input type="email" class="field" id="mail3" placeholder="Email (required)" name="appointment_email" required/>
-                          </div><!-- /.form-controls -->
-                        </div><!-- /.form-row -->
-
-                        <div class="form-row">
-                          <div class="form-controls">
-                            <input type="tel" class="field" id="mobile" placeholder="Phone (Required)" name="appointment_phone" required/>
-                          </div><!-- /.form-controls -->
-                        </div><!-- /.form-row -->
-
-                      </div><!-- /.medium-6 large-6 columns -->
-
-                      <div class="medium-6 large-6 columns">
-
-                        <div class="form-row">
-                          <div class="form-controls">
-                            <input type="date" class="field" id="date" placeholder="Date Requested (mm/dd/yyyy)" name="appointment_date" required/>
-                          </div><!-- /.form-controls -->
-
-                        </div><!-- /.form-row -->
-                        <div class="form-row">
-                          <div class="form-controls">
-                            <input type="text" class="field" id="time" placeholder="Time Requested" name="appointment_time" required/>
-                          </div><!-- /.form-controls -->
-                        </div><!-- /.form-row -->
-
-                        <div class="form-row">
-                          <div class="form-controls">
-                            <textarea name="appointment_service" id="service" placeholder="Service Requested" cols="30" rows="10" class="textarea" required></textarea>
-                          </div><!-- /.form-controls -->
-                        </div><!-- /.form-row -->
-
-                        <div class="form-actions">
-                          <input type="submit" value="Submit" class="form-btn" name="appointment_submit" />
-                        </div><!-- /.form-actions -->
-                      </div><!-- /.medium-6 large-6 columns -->
-                    </div><!-- /.row -->
-                  </div><!-- /.form-body -->
-                </form>
-              </div><!-- /.form-message -->
-            </div><!-- /.medium-12 large-12 columns -->
-          </div><!-- /.row -->
-        </div><!-- /#appointment-popup -->
-
-      <nav class="nav">
         <div class="row">
           <div class="medium-12 large-12 columns">
+            <div class="form-message">
+              <form action="/home" method="post">
+                <header class="form-head">
+                  <h3 id='contact-form-header'>Make an Appointment</h3>
+                </header><!-- /.form-head -->
 
-            <ul>
-              <li>
-                <a href="/">Home</a>
-              </li>
+                <div class="form-body">
+                  <div class="row">
+                    <div class="medium-6 large-6 columns">
+                      <div class="form-row">
+                        <div class="form-controls">
+                          <input type="text" class="field" id="name" placeholder="Name (required)" name="appointment_name" required/>
+                        </div><!-- /.form-controls -->
+                      </div><!-- /.form-row -->
 
-              <li>
-                <a href="/about">About us</a>
-              </li>
+                      <div class="form-row">
+                        <div class="form-controls">
+                          <input type="email" class="field" id="mail3" placeholder="Email (required)" name="appointment_email" required/>
+                        </div><!-- /.form-controls -->
+                      </div><!-- /.form-row -->
 
-              <li>
-                <a href="/started">Getting Started</a>
-              </li>
-            </ul>
+                      <div class="form-row">
+                        <div class="form-controls">
+                          <input type="tel" class="field" id="mobile" placeholder="Phone (Required)" name="appointment_phone" required/>
+                        </div><!-- /.form-controls -->
+                      </div><!-- /.form-row -->
 
-            <ul>
-              <li>
-                <a href="services">Services</a>
-              </li>
+                    </div><!-- /.medium-6 large-6 columns -->
 
-  <!--             <li>
-                <a href="#">FAQ’s</a>
-              </li>
+                    <div class="medium-6 large-6 columns">
 
-              <li>
-                <a href="#">Resources</a>
-              </li>
-               -->
-              <li>
-                <a href="/contact">Contact us</a>
-              </li>
-              <li>
-                <a href="/teletherapy">Teletherapy</a>
-              </li>
-            </ul>
+                      <div class="form-row">
+                        <div class="form-controls">
+                          <input type="date" class="field" id="date" placeholder="Date Requested (mm/dd/yyyy)" name="appointment_date" required/>
+                        </div><!-- /.form-controls -->
+                      </div><!-- /.form-row -->
+
+                      <div class="form-row">
+                        <div class="form-controls">
+                          <input type="text" class="field" id="time" placeholder="Time Requested" name="appointment_time" required/>
+                        </div><!-- /.form-controls -->
+                      </div><!-- /.form-row -->
+
+                      <div class="form-row">
+                        <div class="form-controls">
+                          <textarea name="appointment_service" id="service" placeholder="Service Requested" cols="30" rows="10" class="textarea" required></textarea>
+                        </div><!-- /.form-controls -->
+                      </div><!-- /.form-row -->
+
+                      <div class="form-actions">
+                        <input type="submit" value="Submit" class="form-btn" name="appointment_submit" />
+                      </div><!-- /.form-actions -->
+                    </div><!-- /.medium-6 large-6 columns -->
+                  </div><!-- /.row -->
+                </div><!-- /.form-body -->
+              </form>
+            </div><!-- /.form-message -->
           </div><!-- /.medium-12 large-12 columns -->
         </div><!-- /.row -->
-      </nav><!-- /.nav -->
+      </div><!-- /#appointment-popup -->
+      <div class="logo-wrap">
+        <a href="/" class="logo"><img src="/css/images/Chatterboxes-logo.png" alt="Chatterboxes Logo" /><h1>Chatterboxes Pediatric Speech-Language Pathology</h1></a>
+      </div><!-- /.logo-wrap -->
+      <nav class="top-bar" id="chat-nav" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h2><a href="/">Home</a></h2>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li><a href="services">Services</a></li>
+            <li><a href="/contact">Contact us</a></li>
+            <li><a href="/teletherapy">Teletherapy</a></li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li><a href="/about">About us</a></li>
+            <li><a href="/started">Getting Started</a></li>
+          </ul>
+        </section>
+      </nav>
+
     </header><!-- /.header -->
-    <div class="boston-best-medal"><img src="/css/images/2015BostonBestMedal.jpg" alt="2015 Boston Parents' Paper Best of the Best in the Speech & Language Category Medal"></div>
-  </div>
 
     <%= yield %>
 
@@ -232,7 +225,7 @@
         </div><!-- /.medium-5 medium-offset-1 large-5 large-offset-1 columns -->
 
         <div class="medium-6 large-6 columns">
-          <h3>subscribe to our newsletter</h3>
+          <h3 class="subscribe">subscribe to our newsletter</h3>
           <p>Be the first to know. Sign up to stay informed.</p>
 
           <div class="subscribe" id='newsletter-form' data-flash=<%=params[:newsletter]%>>
@@ -256,11 +249,13 @@
       </div><!-- /.row -->
 
       <div class="row">
-        <div class="medium-12 large-12 columns">
-          <p class="copyright">&copy;2014 Chatterboxes, LLC, All rights reserved.<br/>
+        <div class="small-3 columns">
           <a href="/privacy" class="privacy">Privacy Policy</a></p>
-          <!-- /.copyright -->
-        </div><!-- /.medium-12 large-12 columns -->
+        </div><!-- /.medium-3 -->
+        <div class="small-9 columns">
+          <p class="copyright">&copy;2014 Chatterboxes, LLC, All rights reserved.<br/>
+        </div><!-- /.medium-9 -->
+
       </div><!-- /.row -->
 
       <div class="footer-background">
@@ -291,5 +286,8 @@
         if(oldonload){oldonload()}};
       }());
     </script>
+  <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>

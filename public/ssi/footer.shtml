@@ -10,24 +10,24 @@
 						<li>
 							<a href="#" class="link-facebook">facebook</a>
 						</li>
-						
+
 						<li>
 							<a href="#" class="link-twitter">twitter</a>
 						</li>
-						
+
 						<li>
 							<a href="#" class="link-pinterest">pinterest</a>
 						</li>
-						
+
 						<li>
 							<a href="#" class="link-bing">bing</a>
 						</li>
 					</ul>
 				</div><!-- /.socials -->
 			</div><!-- /.medium-5 medium-offset-1 large-5 large-offset-1 columns -->
-			
+
 			<div class="medium-6 large-6 columns">
-				<h3>subscribe to our newsletter</h3>
+				<h3 class="subscribe">subscribe to our newsletter</h3>
 
 				<p>Cras sit amet viverra diam. Sed sit amet nunc non ligula dictum </p>
 

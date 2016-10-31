@@ -10,7 +10,7 @@ html,
 body { height: 100%; }
 
 html { overflow-y: scroll; }
-body { min-width: 1200px; background: #fff ; font-family: 'Open Sans', sans-serif; font-size: 16px; line-height: 1.4; }
+body { min-width: 100%; background: #fff ; font-family: 'Open Sans', sans-serif; font-size: 16px; line-height: 1.4; }
 
 a { color: #fff; cursor: pointer; text-decoration: none; }
 a:hover { text-decoration: none; }
@@ -70,22 +70,35 @@ p { margin: 0; }
 ========================================================================== */
 .header { position: relative; padding-top: 4px; background: #fff; }
 
-.logo { position: absolute; top: -10px; left: 50%; z-index: 5; overflow: hidden; width: 410px; height: 207px; margin-left: -208px; background: url(images/sprite.png) no-repeat -278px 0; text-indent: 100%; white-space: nowrap; }
+a.logo{
+	position: absolute;
+	z-index: 4;
+	left: 50%;
+}
+a.logo h1{
+	font-size: 1px;
+	position: absolute;
+	top: -10000px;
+}
+a.logo img{
+	position: relative;
+	left: -48%;
+	width: 90%;
+}
+.header-inner { overflow: hidden; padding-bottom: 5px; height: 49px; }
+.header-inner.second-row{
+	height: 70px;
+}
 
-.header-inner { overflow: hidden; padding-bottom: 5px; }
-
-.header-left,
 .header-contacts,
-.search,
-.header-actions,
-.socials { float: left; }
+.search { float: left; }
 .header-right { float: right; }
 
 .header-contacts { padding-top: 12px; margin-right: 14px; font-size: 0; }
 .header-contacts span { display: inline-block; font-family: 'Aller', sans-serif; font-size: 20px; color: #25a7e2; }
 .header-contacts .ico-phone { margin-right: 4px; }
 
-.header-actions { position: relative; margin-left: 62px; }
+.header-actions { position: relative; margin-left: 62px; float: right; bottom: -22px; }
 .header-actions .girl { position: absolute; z-index: 1; top: -2px; left: -50px; width: 63px; height: 53px; background: url(images/sprite.png) no-repeat -477px -301px; }
 .header-actions .btn-chat { margin-left: 15px; }
 .header-actions .btn-help,
@@ -94,16 +107,17 @@ p { margin: 0; }
 .header-actions .btn-sitemap:hover { color: #605f5b; text-decoration: underline; }
 .header-actions .btn-chat:hover { opacity: 0.8; }
 
-.header .socials { float: left; padding-top: 9px; }
+.header .socials { float: right; padding-top: 9px; }
 
-.boston-best-medal { width: 100px; float: right; }
-a.appointment-btn { position: relative; z-index: 0; top: 15px; border-radius: 7px; padding: 8px 20px 7px 20px; border: 2px solid #94d0d4; background: #29a9e2; font-family: 'Roboto', sans-serif; font-size: 18px; color: #fff; }
+.boston-best-medal { width: 70px; }
+a.appointment-btn { position: relative; z-index: 0; top: 15px; border-radius: 7px; padding: 8px 20px 7px 20px; border: 2px solid #94d0d4; background: #29a9e2; font-family: 'Roboto', sans-serif; font-size: 16px; color: #fff; }
 a.appointment-btn:hover { background: #47b7e9; }
-#appointment-popup{ display: none; position: absolute; right: 0; background: white; z-index: 5; padding: 38px 0 36px; border-radius: 20px;}
+#appointment-popup{ display: none; position: absolute; right: 0; background: white; z-index: 6; padding: 38px 0 36px; border-radius: 20px;}
 /* ==========================================================================
 	#Nav
 ========================================================================== */
-.nav {
+.nav,
+#chat-nav.top-bar {
 	background: #76ad3b;
 	background: -moz-linear-gradient(top, #76ad3b 0%, #509517 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#76ad3b), color-stop(100%,#509517));
@@ -112,15 +126,60 @@ a.appointment-btn:hover { background: #47b7e9; }
 	background: -ms-linear-gradient(top, #76ad3b 0%,#509517 100%);
 	background: linear-gradient(to bottom, #76ad3b 0%,#509517 100%);
 }
+#chat-nav li.toggle-topbar.menu-icon{
+	z-index: 6;
+}
+#chat-nav .top-bar-section li:not(.has-form) a:not(.button){
+	background: transparent;
+}
+#chat-nav h2 a{
+	line-height: 57px;
+	font-size: 1.0625rem;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	width: auto;
+	font-weight: normal;
+	color: #fff;
+	display: block;
+	padding: 0 15px;
+}
+#chat-nav .top-bar-section li:not(.has-form) a:not(.button){
+	line-height: 27px;
+}
 
 .nav ul { float: left; list-style: none outside none; }
 .nav ul ~ ul { float: right; }
 .nav li { float: left; }
-.nav li ~ li a { background: url(images/nav-separator.png) no-repeat 0 0; }
-.nav li:hover + li a { background: none; }
-.nav li:first-child a { padding: 16px 15px 0 13px; }
 
-.nav a { display: block; height: 57px; padding: 16px 23px 0 31px; font-family: 'Roboto', sans-serif; font-size: 18px; color: #fff; }
+#chat-nav.top-bar .top-bar-section ul li,
+.nav li ~ li a {
+	background: url(images/nav-separator.png) no-repeat 0 0;
+}
+#chat-nav .top-bar-section li:not(.has-form) a:not(.button):hover + li a,
+#chat-nav.top-bar .name a:hover,
+.nav li:hover + li a {
+	background: none;
+}
+.nav li:first-child a {
+	padding: 16px 15px 0 13px;
+}
+#chat-nav.top-bar{
+	height: 57px;
+}
+#chat-nav.top-bar.expanded{
+	height: auto;
+}
+#chat-nav .top-bar-section ul li>a,
+.nav a {
+	display: block;
+	height: 57px;
+	padding: 16px 23px 0 31px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: #fff;
+}
+#chat-nav.top-bar .name a:hover,
+#chat-nav .top-bar-section li:not(.has-form) a:not(.button):hover,
 .nav a:hover,
 .nav .current a {
 	background: #86bb50;
@@ -170,14 +229,19 @@ a.appointment-btn:hover { background: #47b7e9; }
 /* ==========================================================================
 	#Homepage video and Title
 ========================================================================== */
-.video { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; margin-top:100px; }
+.cover { position: relative; width: 100%; }
+.video {
+	height: 600px;
+	width: 100%;
+	position: relative;
+}
 .video iframe,
 .video object,
 .video embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-.video img{ margin-top: -15px; padding-bottom: 42%;}
+/*.video img{ margin-top: -15px; padding-bottom: 42%;}*/
 .homepage-title-center{
 	position: absolute;
-	top: 250px;
+	top: 150px;
 	width: 100%;
 	text-align: center;
 }
@@ -197,9 +261,6 @@ a.appointment-btn:hover { background: #47b7e9; }
 }
 .homepage-title-center img:hover{
 	-webkit-filter: brightness(0) invert(1);
-}
-.cover{
-	padding-bottom: 42%;
 }
 /* ==========================================================================
 	#Socials
@@ -252,9 +313,13 @@ a.appointment-btn:hover { background: #47b7e9; }
 .form-sign .textarea { border: 1px solid #769b6f; border-radius: 5px; background: #e6f8ff; color: #646464; }
 .form-schedule .field:focus,
 .form-sign .field:focus { background: #dcf5ff; }
-.form-schedule .field ~ .field { margin-left: 18px; }
+.form-schedule .field{
+	margin-left: 9px;
+	margin-right: 9px;
+	margin-bottom: 9px;
+}
 
-.form-schedule .form-actions { float: right; }
+.form-schedule .form-actions { text-align: center; }
 .form-schedule .form-btn,
 .form-message .form-btn,
 .form-sign .form-btn { border-radius: 7px; padding: 11px 31px 10px 31px; border: 2px solid #94d0d4; background: #29a9e2; font-family: 'Roboto', sans-serif; font-size: 18px; color: #fff; text-transform: uppercase; }
@@ -321,7 +386,6 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .therapy-image img { width: 260px; height: 191px; }
 .therapy-content p { font-size: 17px; color: #4c4b4d; text-transform: uppercase; }
 
-.section-therapy .section-actions { overflow: hidden; padding: 3px 96px 0 0; }
 .section-therapy .section-actions .btn-more { float: right; }
 .section-therapy .section-actions span { float: left; padding: 10px 60px 7px 23px; margin: 12px 0 0 0; background: #4c4b4d; font-size: 17px; color: #fff; text-transform: uppercase; }
 .section-therapy .section-actions .ico-more { float: right; margin-left: -15px; }
@@ -339,12 +403,10 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 
 .slider-testimonials { padding: 0 100px 0 252px; }
 .slider-testimonials .slides { list-style: none outside none; }
-.slider-testimonials .slide { float: left; width: 1045px; }
+.slider-testimonials .slide { float: left; width: 100%; }
 
 .slider-testimonials .slide-image { float: left; width: 260px; height: 280px;
 	padding: 7px 0 0 7px; margin-right: 50px; }
-
-/*  background: url(images/sprite.png) no-repeat 0px -209px; */
 
 .slider-testimonials .slide-image img {	max-width: 100%; -webkit-border-radius: 50%;
 	-moz-border-radius: 50%; border-radius: 50%; border: 1px solid white; padding: 1px; }
@@ -354,7 +416,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 
 .slider-testimonials .slider-clip { margin-bottom: 45px; }
 
-.slider-testimonials .slider-paging { position: relative; bottom: 70px; left: -66px; text-align: center; }
+.slider-testimonials .slider-paging { position: relative; bottom: 70px; left: -66px; text-align: center; margin-top: 100px; }
 .slider-testimonials .slider-paging ul { display: inline-block; list-style: none outside none; }
 .slider-testimonials .slider-paging li { float: left; }
 .slider-testimonials .slider-paging li ~ li { margin-left: 3px; }
@@ -655,8 +717,8 @@ margin-right: 20px; border-radius: 4px; opacity: .5; }
 .footer h3 { margin-bottom: 30px; font-family: 'Chomp', sans-serif; font-size: 28px; color: #656561; text-transform: uppercase; letter-spacing: 0.02em; }
 .footer p { margin-bottom: 29px; font-size: 16px; line-height: 1.38; color: #787778; }
 
-a.privacy { font-size: 15px; color: #fff; text-align: left; letter-spacing: -0.025em; display: block; margin-top: -22px; }
-p.copyright { margin: 215px 0 0; font-size: 15px; color: #fff; text-align: center; letter-spacing: -0.025em; }
+a.privacy { margin: 215px 0 0; font-size: 15px; color: #fff; text-align: left; letter-spacing: -0.025em; display: block; }
+p.copyright { margin: 215px 0 0; font-size: 15px; color: #fff; text-align: right; letter-spacing: -0.025em; }
 
 .fsr-container { overflow: hidden; background-repeat: no-repeat; background-size: cover; }
 .fsr-image { position: absolute; }
@@ -686,11 +748,17 @@ input.subscribe-btn:hover { background: #99bb48; }
 .subscribe input[placeholder] { font-family: 'Open Sans', sans-serif; font-size: 18px; color: #fff; opacity: 1; }
 .subscribe textarea[placeholder] { font-family: 'Open Sans', sans-serif; font-size: 18px; color: #fff; opacity: 1; }
 .subscribe :-ms-input-placeholder { font-family: 'Open Sans', sans-serif; font-size: 18px; color: #fff; opacity: 1; }
-
+h3.subscribe{
+	margin-top: 40px;
+}
+/*==========================*/
+/*OLARK */
+/*============================*/
+div.olrk-state-compressed #habla_window_div { width: auto !important; }
+div.olrk-state-expanded #habla_window_div { width: 97% !important; }
 /* ==========================================================================
 	#Media Queries
 ========================================================================== */
-
 
 @media only screen and (min-width: 64.063em) {
 	.large-12 { padding: 0; }
@@ -708,7 +776,7 @@ input.subscribe-btn:hover { background: #99bb48; }
 	.nav a { padding: 16px 20px 0; font-size: 16px; }
 	.search { position: relative; z-index: 6; }
 
-	.form-schedule .field { width: 235px; }
+	.form-schedule .field { width: 215px; }
 	.form-schedule-alt .field { width: 210px; }
 
 	.section-therapy .section-body { padding: 0; }
@@ -723,4 +791,121 @@ input.subscribe-btn:hover { background: #99bb48; }
 
 	/*.slider-team .slide ~ .slide { margin-left: 18px; }*/
 
+}
+@media only screen and (max-width: 55.063em) {
+	.homepage-title-center img{
+		width: 10%;
+	}
+	.homepage-title-center{
+		top: 140px;
+	}
+	.homepage-title-center h1{
+  	font-size: 2.0em;
+  }
+  .homepage-title-center h2{
+  	font-size: 1.0em;
+  }
+}
+@media only screen and (max-width: 64.063em) {
+  meta.foundation-mq-topbar {
+      font-family: "/only screen and (min-width:64.063em)/";
+      width: 64.063em;
+  }
+	.top-bar-section ul li{
+		float: none;
+	}
+  .top-bar {
+    overflow: hidden;
+    height: 2.8125rem;
+    line-height: 2.8125rem;
+    position: relative;
+    background: #333;
+    margin-bottom: 0;
+  }
+  .top-bar.expanded ul.title-area{
+  	background: #76ad3b;
+		background: -moz-linear-gradient(top, #76ad3b 0%, #509517 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #76ad3b), color-stop(100%, #509517));
+		background: -webkit-linear-gradient(top, #76ad3b 0%, #509517 100%);
+		background: -o-linear-gradient(top, #76ad3b 0%, #509517 100%);
+		background: -ms-linear-gradient(top, #76ad3b 0%, #509517 100%);
+		background: linear-gradient(to bottom, #76ad3b 0%, #509517 100%);
+		height: 57px;
+  }
+
+  .top-bar-section {
+    left: 0;
+    position: relative;
+    width: auto;
+    transition: left 300ms ease-out;
+  }
+
+  .top-bar-section ul {
+    padding: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    font-size: 16px;
+    margin: 0;
+  }
+  .top-bar.expanded .toggle-topbar a{
+  	color: #ffffff;
+  }
+
+  .top-bar .toggle-topbar.menu-icon {
+    top: 50%;
+    margin-top: -16px;
+    display:block;
+  }
+  .top-bar .title-area {
+    float: none;
+  }
+  .video{
+  	height: 400px;
+  }
+	.slider-testimonials .slide-image{
+		display: none;
+	}
+	.birds-white{
+		top: -100px;
+	}
+}
+@media only screen and (max-width: 40.063em) {
+	.homepage-title-center{
+		top: 70px;
+	}
+	.homepage-title-center h1{
+  	display: none;
+  }
+  .homepage-title-center h2{
+  	display: none;
+  }
+  .homepage-title-center img{
+		width: 15%;
+	}
+	nav#chat-nav.top-bar{
+  	margin-top: 20px;
+  }
+
+	.video{
+  	height: 250px;
+  }
+  .boston-best-medal{
+  	float: right;
+  }
+  .header .socials{
+  	float: left;
+  }
+  .section-therapy .section-actions .ico-more{
+  	display: none;
+  }
+  .section-therapy .section-actions span{
+  	padding:20px;
+  }
+  .section-therapy .section-actions{
+  	padding-bottom: 130px;
+  }
+  .slider-testimonials{
+		padding: 0px;
+	}
 }

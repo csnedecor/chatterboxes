@@ -30,7 +30,7 @@
 		});
 
 		// Show Video
-		$('.video.cover').click(function(event){
+		$('.cover').click(function(event){
 			event.preventDefault();
 			var $video = $('.video.hidden');
 			var $logo = $('.logo');
@@ -49,6 +49,7 @@
 		// Slider Testimonials
 		$('.slider-testimonials .slides').carouFredSel({
 			scroll : { fx : "fade" },
+			responsive: true,
 			pagination: {
 				container: '.slider-testimonials .slider-paging ul',
 				anchorBuilder: function(number) {
