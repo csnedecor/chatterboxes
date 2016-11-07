@@ -70,6 +70,8 @@
 		$win.load(function(){
 			$('.slider-office .slides').carouFredSel({
 				scroll : { fx : "fade" },
+				width: "100%",
+				responsive: true,
 				pagination: {
 					container: '.slider-office .slider-paging ul',
 					anchorBuilder: function(number) {
@@ -79,13 +81,25 @@
 			});
 		});
 
-		// Slider Staff Bios
-		function highlightSlide(event){
-			var $highlightedSlide = $('.slider-team').find('.current');
-			$highlightedSlide.removeClass('current');
-			$(event.currentTarget).addClass('current');
+		function setMainColumnWidth(){
+	    var mainColumnWidth = $(".slider-office").width();
+	    $(".slider-office .slide img").css("width", mainColumnWidth);
 		}
+		$(document).ready(function() {
+		    setMainColumnWidth();
+		});
 
+		$(window).resize(function() {
+		    setMainColumnWidth();
+		});
+
+    // Slider Staff Bios
+
+    function highlightSlide(event){
+      var $highlightedSlide = $('.slider-team').find('.current');
+      $highlightedSlide.removeClass('current');
+      $(event.currentTarget).addClass('current');
+    }
 		function changeBio(selection){
 			var $currentBio = $('.section-current');
 			$currentBio.removeClass('section-current')
@@ -214,5 +228,4 @@
 	        container.hide();
 	    }
 	});
-
 })(jQuery, window, document);
