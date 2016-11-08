@@ -495,11 +495,11 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 	#Section Started
 ========================================================================== */
 .section-started { padding: 77px 0 83px; }
-.section-started .section-head { padding: 0 190px 0 110px; margin-bottom: 67px; text-align: center; }
+.section-started .section-head { margin-bottom: 67px; text-align: center; }
 .section-started .section-head p { font-size: 24px; line-height: 1.42; color: #686868; letter-spacing: 0.025em; }
 .section-started .section-body { margin-bottom: 86px; }
 
-.section-started .section-foot { padding: 0 120px; text-align: center; }
+.section-started .section-foot { text-align: center; }
 
 .article { border-top: 1px solid #fff; }
 .article-head { padding-top: 77px; border-top: 1px solid #dedede; margin-bottom: 34px; }
@@ -534,16 +534,15 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 /* ==========================================================================
 	#Slider Testimonial Small
 ========================================================================== */
-.slider-testimonial-small { padding-right: 72px; }
 .slider-testimonial-small .slides { list-style: none outside none; }
 .slider-testimonial-small .slide { float: left; }
-.slider-testimonial-small .slide-content { width: 612px; padding: 0 96px; text-align: center; }
+.slider-testimonial-small .slide-content { width: 100%; text-align: center; }
 .slider-testimonial-small h2 { margin-bottom: 66px; font-family: 'Chomp', sans-serif; font-size: 28px; color: #686868; letter-spacing: 0.18em; }
 
 .slider-testimonial-small blockquote { padding: 0; border: none; margin: 0 0 12px 0; font-size: 26px; color: #686868; font-style: italic; letter-spacing: 0.025em; }
 .slider-testimonial-small span { font-size: 20px; color: #70a934; font-style: italic; }
 
-.slider-testimonial-small .slider-actions { padding-right: 25px; margin-top: 12px; font-size: 0; text-align: right; }
+.slider-testimonial-small .slider-actions { margin-top: 12px; font-size: 0; text-align: center; }
 .slider-testimonial-small .slider-prev,
 .slider-testimonial-small .slider-next { display: inline-block; width: 46px; height: 47px; background: url(images/sprite.png) no-repeat; }
 .slider-testimonial-small .slider-prev { background-position: -354px -209px; }
@@ -965,5 +964,8 @@ div.olrk-state-expanded #habla_window_div { width: 97% !important; }
 	}
 	.subscribe{
 		margin-top: 40px;
+	}
+	.slider-testimonial-small h2{
+		margin-top: 66px;
 	}
 }

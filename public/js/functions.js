@@ -63,6 +63,8 @@
 			prev: '.slider-testimonial-small .slider-prev',
 			next: '.slider-testimonial-small .slider-next',
 			auto: 5000,
+			responsive: true,
+			height: "auto",
 			scroll: { duration: 1000 }
 		});
 
