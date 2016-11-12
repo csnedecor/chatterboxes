@@ -50,6 +50,7 @@
 		$('.slider-testimonials .slides').carouFredSel({
 			scroll : { fx : "fade" },
 			responsive: true,
+			height: "auto",
 			pagination: {
 				container: '.slider-testimonials .slider-paging ul',
 				anchorBuilder: function(number) {

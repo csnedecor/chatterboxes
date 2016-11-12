@@ -83,7 +83,8 @@ a.logo h1{
 a.logo img{
 	position: relative;
 	left: -48%;
-	width: 90%;
+	width: 255px;
+	top: -38px;
 }
 .header-inner { overflow: hidden; padding-bottom: 5px; height: 49px; }
 .header-inner.second-row{
@@ -218,7 +219,7 @@ a.appointment-btn:hover { background: #47b7e9; }
 .intro { position: relative; }
 .intro-image { height: 675px; }
 
-.intro-content { position: absolute; top: 125px; left: 0; width: 100%; padding-top: 132px; }
+.intro-content { position: absolute; top: 10%; left: 0; width: 100%; padding-top: 132px; }
 .intro-content h1 { font-family: 'Museo', sans-serif; font-size: 78px; color: #fff; font-weight: 700; text-align: center; }
 
 /* ==========================================================================
@@ -410,7 +411,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 
 .slider-testimonials .slide-image img {	max-width: 100%; -webkit-border-radius: 50%;
 	-moz-border-radius: 50%; border-radius: 50%; border: 1px solid white; padding: 1px; }
-.slider-testimonials .slide-content { overflow: hidden; padding-top: 9px; }
+.slider-testimonials .slide-content { padding-top: 9px; }
 .slider-testimonials .slide-content h5 { margin-bottom: 15px; font-family: 'Overlock', sans-serif; font-size: 25px; color: #fff; font-weight: bold; }
 .slider-testimonials .slide-content p { font-size: 29px; color: #fff; letter-spacing: -0.025em; }
 
@@ -430,14 +431,33 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 	#Accordion Therapy
 ========================================================================== */
 .accordion-therapy { padding: 19px 27px 0 91px; text-align: left; }
-.accordion-therapy .accordion-head { height: 60px; cursor: pointer; }
-.accordion-therapy .accordion-head .btn-plus { margin-left: -61px; }
-.accordion-therapy h4 { float: left; margin: 19px 0 0 17px; font-family: 'Museo', sans-serif; font-size: 22px; color: #4f4f4f; font-weight: 500; }
+.accordion-therapy .accordion-head { overflow: auto; cursor: pointer; }
+.accordion-therapy .accordion-head .btn-plus {
+	float: left;
+	width: 60px;
+	height: 60px;
+	border-radius: 4px;
+	background: #7db142 url(images/ico-plus.png) no-repeat center center;
+	display: inline-block;
+}
+.accordion-therapy h4 {
+	float: left;
+	width: 80%;
+	min-height: 60px;
+	margin-left: 10px;
+	padding: 9px;
+	font-family: 'Museo', sans-serif;
+	font-size: 22px;
+	color: #4f4f4f;
+	font-weight: 500;
+
+	display: inline-block;
+}
 .accordion-therapy .accordion-section { border: 1px solid #fff; background: #eaeaea; }
 .accordion-therapy .accordion-section ~ .accordion-section { margin-top: 6px; }
 .accordion-therapy .accordion-body { padding: 0 18px 39px; }
 
-.accordion-therapy .accordion-image { overflow: hidden; float: left; width: 308px; height: 251px; padding-top: 13px; border-radius: 4px; margin-right: 23px; }
+.accordion-therapy .accordion-image { padding-top: 13px; border-radius: 4px; }
 .accordion-therapy .accordion-content { overflow: hidden; padding-top: 9px; }
 .accordion-therapy .accordion-content a{ color: #29a8e1; }
 .accordion-therapy .accordion-content a:hover{ text-decoration: underline; }
@@ -455,22 +475,28 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .section-contacts .section-head { margin-bottom: 84px; text-align: center; }
 .section-contacts .section-head h2 { font-family: 'Chomp', sans-serif; font-size: 40px; color: #6d6d6d; letter-spacing: 0.18em; }
 
-.contacts { padding-left: 91px; color: #6d6d6d; }
+.contacts { color: #6d6d6d; }
 .contacts span { font-size: 24px; }
+.contacts a{ color: #7db143; }
+.contacts a:hover{ text-decoration: underline; }
 .contacts p { padding-left: 44px; font-size: 18px; line-height: 1.39; margin-top: -3px; }
 .contacts ~ .contacts { margin-top: 44px; }
 
-.contacts-alt { padding-left: 10px; }
 .contacts-alt p { padding-left: 0; margin: 0 0 8px; }
 .contacts-alt h4 { margin-bottom: 12px; }
-.contacts-alt .contacts-avatar { float: left; padding-top: 12px; margin-right: 29px; }
+.contacts-alt{
+	float: right;
+}
+.contacts-alt .contacts-avatar { padding-top: 12px; }
 .contacts-alt .contacts-avatar img { border-radius: 7px;
+																		 max-width: 300px;
+																		 width: 100%;
 																		 -webkit-border-radius: 7px;
 																		 -moz-border-radius: 7px;
 																		 box-shadow: 1px 1px 4px #76ad3b;
 																	 }
 
-.contacts-alt .contacts-content { overflow: hidden; padding-top: 53px; }
+.contacts-alt .contacts-content { padding-top: 53px; }
 .contacts-alt .contacts-content a { display: inline-block; margin-bottom: 19px; font-size: 14px; line-height: 2.3; color: #7db143; }
 .contacts-alt .contacts-content a:hover { text-decoration: underline; }
 .contacts-alt .ico-mail { margin-right: 14px; }
@@ -852,7 +878,6 @@ div.olrk-state-expanded #habla_window_div { width: 97% !important; }
 
   .top-bar .toggle-topbar.menu-icon {
     top: 50%;
-    margin-top: -16px;
     display:block;
   }
   .top-bar .title-area {
@@ -897,6 +922,27 @@ div.olrk-state-expanded #habla_window_div { width: 97% !important; }
 		height: 200px;
 		overflow: hidden;
 	}
+	.intro-content{
+		top: -20px;
+	}
+	a.logo img{
+		top: -18px;
+	}
+	#chat-nav li.toggle-topbar.menu-icon{
+		top: 30%;
+		display: block;
+		margin-top: 0px;
+	}
+	.top-bar-section{
+		top: 30%;
+		margin-top: 0px;
+	}
+	.accordion-therapy{
+		padding: 19px 27px 0 25px;
+	}
+	.contacts span {
+		font-size: 20px;
+	}
 }
 @media only screen and (max-width: 40.063em) {
 	.homepage-title-center{
@@ -918,12 +964,6 @@ div.olrk-state-expanded #habla_window_div { width: 97% !important; }
 	.video{
   	height: 250px;
   }
-  .boston-best-medal{
-  	float: right;
-  }
-  .header .socials{
-  	float: left;
-  }
   .section-therapy .section-actions .ico-more{
   	display: none;
   }
@@ -936,14 +976,11 @@ div.olrk-state-expanded #habla_window_div { width: 97% !important; }
   .slider-testimonials{
 		padding: 0px;
 	}
-	.intro-content{
-		top: -20px;
-	}
 	.intro-image{
 		height: 200px;
 	}
 	.intro-content h1{
-	  font-size: 58px;
+	  font-size: 38px;
 	}
 	.slider-boy,
 	.slider-girl{
@@ -967,5 +1004,44 @@ div.olrk-state-expanded #habla_window_div { width: 97% !important; }
 	}
 	.slider-testimonial-small h2{
 		margin-top: 66px;
+	}
+	a.logo img{
+		top: 10px;
+		width: 200px;
+	}
+	.header-contacts span{
+		display: none;
+	}
+	.header-image img{
+	object-fit: cover;
+	min-width: 40.063em;
+	height: 200px;
+	}
+	.accordion-therapy{
+		padding: 0px;
+	}
+	.contacts.contacts-alt{
+		text-align: center;
+		display: block;
+		float: none;
+	}
+	.contacts{
+		display: inline-block;
+	}
+	.contacts-avatar{
+		margin-top: 40px;
+	}
+	.contacts .socials{
+		max-width: 120px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.contacts span {
+		font-size: 24px;
+	}
+}
+@media only screen and (max-width: 480px){
+	.ot-header{
+		margin-left: -100px;
 	}
 }
