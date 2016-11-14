@@ -382,9 +382,10 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 	margin-top: 20px;
 }
 
-.therapy-items { overflow: hidden; margin-right: -56px; list-style: none outside none; }
-.therapy-item { float: left; margin: 0 52px 42px 0; }
-.therapy-image { width: 276px; height: 207px; padding: 7px 0 0 7px; margin-bottom: 12px; background: url(images/sprite.png) no-repeat 0 0; text-align: left; }
+.therapy-items { overflow: hidden; margin-right: -56px; list-style: none outside none; max-width: 1600px; width: 100%; }
+.therapy-item { display: inline-block; margin: 0 52px 42px 0; }
+.therapy-image { margin-left: auto;
+	margin-right: auto; width: 276px; height: 207px; padding: 7px 0 0 7px; margin-bottom: 12px; background: url(images/sprite.png) no-repeat 0 0; text-align: left; }
 .therapy-image img { width: 260px; height: 191px; }
 .therapy-content p { font-size: 17px; color: #4c4b4d; text-transform: uppercase; }
 
