@@ -73,7 +73,6 @@ p { margin: 0; }
 a.logo{
 	position: absolute;
 	z-index: 4;
-	left: 50%;
 }
 a.logo h1{
 	font-size: 1px;
@@ -82,7 +81,7 @@ a.logo h1{
 }
 a.logo img{
 	position: relative;
-	left: -48%;
+	left: 148%;
 	width: 255px;
 	top: -38px;
 }
