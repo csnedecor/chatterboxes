@@ -70,17 +70,18 @@ p { margin: 0; }
 ========================================================================== */
 .header { position: relative; padding-top: 4px; background: #fff; }
 
-a.logo{
+.logo{
 	position: absolute;
 	z-index: 4;
 	left: 50%;
+	pointer-events: none;
 }
-a.logo h1{
+.logo h1{
 	font-size: 1px;
 	position: absolute;
 	top: -10000px;
 }
-a.logo img{
+.logo img{
 	position: relative;
 	left: -48%;
 	width: 255px;
@@ -925,7 +926,7 @@ div.olrk-state-expanded #habla_window_div { width: 97% !important; }
 	.intro-content{
 		top: -20px;
 	}
-	a.logo img{
+	.logo img{
 		top: -18px;
 	}
 	#chat-nav li.toggle-topbar.menu-icon{
@@ -1005,7 +1006,7 @@ div.olrk-state-expanded #habla_window_div { width: 97% !important; }
 	.slider-testimonial-small h2{
 		margin-top: 66px;
 	}
-	a.logo img{
+	.logo img{
 		top: 10px;
 		width: 200px;
 	}
