@@ -225,25 +225,25 @@ post '/ot' do
   end
 end
 
-get '/teletherapy' do
-  @therapy_id = params[:therapy_id] || 'none'
-  erb :teletherapy, layout: :application
-end
+# get '/teletherapy' do
+#   @therapy_id = params[:therapy_id] || 'none'
+#   erb :teletherapy, layout: :application
+# end
 
-post '/teletherapy' do
-  if presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
-    @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
-    @phone = params[:phone]
-    @email = params[:email]
-    @therapy_type = params[:therapy_type]
+# post '/teletherapy' do
+#   if presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
+#     @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
+#     @phone = params[:phone]
+#     @email = params[:email]
+#     @therapy_type = params[:therapy_type]
 
-    send_mail(@full_name, @email, @phone, @therapy_type)
-    redirect '/teletherapy?mail=true'
-  else
-    puts 'Email error: blank fields'
-    redirect '/teletherapy'
-  end
-end
+#     send_mail(@full_name, @email, @phone, @therapy_type)
+#     redirect '/teletherapy?mail=true'
+#   else
+#     puts 'Email error: blank fields'
+#     redirect '/teletherapy'
+#   end
+# end
 
 get '/started' do
   erb :started, layout: :application
@@ -284,8 +284,8 @@ get '/about/elizabeth' do
   erb :"about/elizabeth", layout: :application
 end
 
-get '/about/allison' do
-  erb :"about/allison", layout: :application
+get '/about/karolina' do
+  erb :"about/karolina", layout: :application
 end
 
 get '/about/heather' do
