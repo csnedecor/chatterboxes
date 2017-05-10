@@ -307,3 +307,7 @@ end
 get '/about/annemarie' do
   erb :"about/annemarie", layout: :application
 end
+
+get '/about/anya' do
+  erb :"about/anya", layout: :application
+end
