@@ -296,8 +296,8 @@ get '/about/suzie' do
   erb :"about/suzie", layout: :application
 end
 
-get '/about/briana' do
-  erb :"about/briana", layout: :application
+get '/about/abby' do
+  erb :"about/abby", layout: :application
 end
 
 get '/about/erika' do
