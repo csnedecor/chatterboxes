@@ -231,7 +231,22 @@
           <p>Be the first to know. Sign up to stay informed.</p>
 
           <div class="subscribe" id='newsletter-form' data-flash=<%=params[:newsletter]%>>
-            <form action="/mailchimp" method="post">
+            <form action="https://chatterboxes.createsend.com/t/d/s/bskly/" method="post" id="subForm">
+                  <select id="fieldpkjlki" name="cm-fo-pkjlki" class="subscribe-field" required>
+                      <option value="" disabled>I am... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9660;</option>
+                      <option value="2097286">A parent</option>
+                      <option value="2097287">A teacher</option>
+                      <option value="2097288">A physician</option>
+                      <option value="2097289">Other</option>
+                  </select>
+                  <br/><br/>
+                  <label for="fieldEmail" class="hidden"></label>
+                  <input id="fieldEmail" name="cm-bskly-bskly" class="subscribe-field" type="email" placeholder="Enter email" required />
+
+                  <input type="submit" value="Subscribe" class="subscribe-btn" />
+          </form>
+
+            <!-- <form action="/mailchimp" method="post">
               <select name='category' id='category' class='subscribe-field' required>
                 <option value="" disabled>I am... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9660; </option>
                 <option value="Parent" >A parent</option>
@@ -245,7 +260,7 @@
               <input type="email" placeholder="Enter email" class="subscribe-field" name='email' id="email" required />
 
               <input type="submit" value="Subscribe" class="subscribe-btn" />
-            </form>
+            </form> -->
           </div><!-- /.subscribe -->
         </div><!-- /.medium-6 large-6 columns -->
       </div><!-- /.row -->
