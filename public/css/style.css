@@ -577,6 +577,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .slider-testimonial-small .slider-next { margin-left: 4px; background-position: -402px -209px; }
 .slider-testimonial-small .slider-prev:hover,
 .slider-testimonial-small .slider-next:hover { opacity: 0.8; }
+.home .slider-testimonial-small {padding-bottom: 57px;}
 
 /* ==========================================================================
 	#Section Team
