@@ -14,14 +14,14 @@ use Rack::Olark, id: ENV['OLARK_SITE_ID']
 
 def send_mail(name, email, phone, message=nil, location=nil, therapy_type=nil)
   body =
-    "Hi Heather,\n
+    "Hi Erin,\n
     \t New message from #{name}:  \n
     \t #{message} \n
     \t They can be reached via email at #{email} or by phone at #{phone}.
     \t Interested in: #{location} Location."
 
   Pony.mail({
-    to: 'heather@teamchatterboxes.com',
+    to: 'erin@teamchatterboxes.com',
     cc: 'megan@teamchatterboxes.com',
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
@@ -62,7 +62,7 @@ def send_appointment_request(name, email, phone, date=nil, time=nil, service=nil
   # Pony.mail :to => "coriannas@yahoo.com", :via =>:sendmail,
 
   Pony.mail({
-    to: 'heather@teamchatterboxes.com',
+    to: 'erin@teamchatterboxes.com',
     cc: 'megan@teamchatterboxes.com',
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
@@ -288,8 +288,8 @@ get '/about/caroline' do
   erb :"about/caroline", layout: :application
 end
 
-get '/about/heather' do
-  erb :"about/heather", layout: :application
+get '/about/erin' do
+  erb :"about/erin", layout: :application
 end
 
 get '/about/suzie' do
