@@ -5,6 +5,9 @@ require 'mailchimp'
 require 'gibbon'
 require 'rack-olark'
 require 'pry'
+require 'rack/ssl-enforcer'
+
+use Rack::SslEnforcer if production?
 
 Dotenv.load
 use Rack::Olark, id: ENV['OLARK_SITE_ID']
