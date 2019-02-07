@@ -60,9 +60,8 @@ def send_mail(name, email, phone, message=nil, location=nil, therapy_type=nil)
 end
 
 def send_appointment_request(name, email, phone, date=nil, time=nil, service=nil)
-
   # Code for testing in development
-  # Pony.mail :to => "coriannas@yahoo.com", :via =>:sendmail,
+  #Pony.mail :to => "coriannas@yahoo.com", :via =>:sendmail,
 
   Pony.mail({
     to: 'erin@teamchatterboxes.com',
@@ -136,7 +135,9 @@ end
 
 post '/home' do
   if params[:appointment_submit]
-    if presence_valid?(params[:appointment_name], params[:appointment_email], params[:appointment_phone])
+    if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
+      redirect '/home'
+    elsif presence_valid?(params[:appointment_name], params[:appointment_email], params[:appointment_phone])
       @full_name = params[:appointment_name]
       @phone = params[:appointment_phone]
       @email = params[:appointment_email]
@@ -151,7 +152,9 @@ post '/home' do
       redirect '/home'
     end
   else
-    if presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
+    if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
+      redirect '/home'
+    elsif presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
       @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
       @phone = params[:phone]
       @email = params[:email]
@@ -174,7 +177,9 @@ get '/contact' do
 end
 
 post '/contact' do
-  if presence_valid?(params[:name], params[:message], params[:email], params[:phone])
+  if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
+    redirect '/home'
+  elsif presence_valid?(params[:name], params[:message], params[:email], params[:phone])
     @full_name = "#{params[:name].capitalize}"
     @phone = params[:phone]
     @email = params[:email]
@@ -194,7 +199,9 @@ get '/services' do
 end
 
 post '/services' do
-  if presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
+  if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
+    redirect '/home'
+  elsif presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
     @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
     @phone = params[:phone]
     @email = params[:email]
@@ -214,7 +221,9 @@ get '/ot' do
 end
 
 post '/ot' do
-  if presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
+  if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
+    redirect '/home'
+  elsif presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
     @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
     @phone = params[:phone]
     @email = params[:email]
@@ -234,7 +243,9 @@ end
 # end
 
 # post '/teletherapy' do
-#   if presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
+#   if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
+#    redirect '/home'
+#   elsif presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
 #     @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
 #     @phone = params[:phone]
 #     @email = params[:email]
@@ -253,7 +264,9 @@ get '/started' do
 end
 
 post '/started' do
-  if presence_valid?(params[:name], params[:message], params[:email], params[:phone], params[:location])
+  if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
+    redirect '/home'
+  elsif presence_valid?(params[:name], params[:message], params[:email], params[:phone], params[:location])
     @full_name = "#{params[:name].capitalize}"
     @phone = params[:phone]
     @email = params[:email]

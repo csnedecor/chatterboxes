@@ -34,4 +34,3 @@ gem "pry"
 gem "pry-nav"
 
 gem 'rack-ssl-enforcer'
-
