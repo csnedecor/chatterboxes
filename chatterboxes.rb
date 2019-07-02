@@ -17,15 +17,14 @@ use Rack::Olark, id: ENV['OLARK_SITE_ID']
 
 def send_mail(name, email, phone, message=nil, location=nil, therapy_type=nil)
   body =
-    "Hi Erin,\n
+    "Hi Megan,\n
     \t New message from #{name}:  \n
     \t #{message} \n
     \t They can be reached via email at #{email} or by phone at #{phone}.
     \t Interested in: #{location} Location."
 
   Pony.mail({
-    to: 'erin@teamchatterboxes.com',
-    cc: 'megan@teamchatterboxes.com',
+    to: 'megan@teamchatterboxes.com',
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
     html_body: erb(:message_email),
@@ -64,8 +63,7 @@ def send_appointment_request(name, email, phone, date=nil, time=nil, service=nil
   #Pony.mail :to => "coriannas@yahoo.com", :via =>:sendmail,
 
   Pony.mail({
-    to: 'erin@teamchatterboxes.com',
-    cc: 'megan@teamchatterboxes.com',
+    to: 'megan@teamchatterboxes.com',
     from: "Chatterboxes-Web-Services@teamchatterboxes.com",
     subject: "New message!",
     html_body: erb(:appointment_email),
@@ -296,28 +294,16 @@ get '/about/alexandra' do
   erb :"about/alexandra", layout: :application
 end
 
-get '/about/elizabeth' do
-  erb :"about/elizabeth", layout: :application
+get '/about/katie' do
+  erb :"about/katie", layout: :application
 end
 
 get '/about/caroline' do
   erb :"about/caroline", layout: :application
 end
 
-get '/about/erin' do
-  erb :"about/erin", layout: :application
-end
-
-get '/about/suzie' do
-  erb :"about/suzie", layout: :application
-end
-
 get '/about/abby' do
   erb :"about/abby", layout: :application
-end
-
-get '/about/erika' do
-  erb :"about/erika", layout: :application
 end
 
 get '/about/annemarie' do
