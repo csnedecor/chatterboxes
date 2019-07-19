@@ -36,12 +36,11 @@
 								<span>
 									<i class="ico ico-location"></i>
 
-									Lexington
+									Winchester
 								</span>
 								<p>
-									35 Bedford Street, <br />
-									Unit 6 <br />
-									Lexington, MA 02420
+									77 Swanton Street <br />
+									Winchester, MA 01890
 								</p>
 							</div>
 						</div>
@@ -163,12 +162,16 @@
 	<style type="text/css">
 	html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
 	</style>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{GOOGLE_API_KEY}">
+	<div>
+
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>">
+
+
 	</script>
 	<script type="text/javascript">
 		var points = [
 			['Newton Centre', 42.331253, -71.193983, 'https://www.google.com/maps/place/10+Langley+Rd,+Newton+Centre,+MA+02459/@42.3312415,-71.193881,17z/data=!3m1!4b1!4m2!3m1!1s0x89e38278ef2ff84b:0x83244687a75888be'],
-			['Lexington Center', 42.448908, -71.228836, 'https://www.google.com/maps/place/35+Bedford+St,+Lexington,+MA+02421/@42.4525716,-71.2338597,17z/data=!3m1!4b1!4m2!3m1!1s0x89e39dd12fc93583:0xe71953bc82ce958c']
+			['Winchester', 42.4602308, -71.1347317,17, 'https://www.google.com/maps/place/77+Swanton+St,+Winchester,+MA+01890/@42.4602308,-71.1347317,17z/data=!4m13!1m7!3m6!1s0x89e37447f95f9d07:0xb3590fe2f0193bfa!2s77+Swanton+St,+Winchester,+MA+01890!3b1!8m2!3d42.4602269!4d-71.1325377!3m4!1s0x89e37447f95f9d07:0xb3590fe2f0193bfa!8m2!3d42.4602269!4d-71.1325377']
 		];
 
 	function setMarkers(map, locations) {
