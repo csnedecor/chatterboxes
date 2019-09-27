@@ -83,10 +83,10 @@
           </div>
         </div>
 
-        <div class="large-6 medium-6 hide-for-small-only columns">
+        <div class="large-6 medium-6 hide-for-small-only columns <% if request.path == '/home' || request.path == '/' %>shift-right-home<% end %>">
           <div class="header-inner second-row">
-            <div class="boston-best-medal">
-
+            <div class="client-portal">
+              <a href="https://chatterboxes.clientsecure.me" target="_blank">Client Portal</a>
             </div>
           </div><!-- /.header-inner -->
         </div><!-- /.large-6 medium-6 small-12 columns -->
@@ -190,6 +190,7 @@
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="right">
+            <li class="mobile-only"><a href="https://chatterboxes.clientsecure.me" target="_blank">Client Portal</a></li>
             <li><a href="/ot">Occupational Therapy</a></li>
             <li><a href="services">Services</a></li>
             <li><a href="/contact">Contact us</a></li>

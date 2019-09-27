@@ -54,6 +54,9 @@ p { margin: 0; }
 
 #contact-form-header .flash-notice { margin: 10px 0px 0px 10px; color: #76ad3b; }
 
+.mobile-only{
+	display:none;
+}
 /* ==========================================================================
 	#Containers
 ========================================================================== */
@@ -86,6 +89,20 @@ p { margin: 0; }
 	left: -48%;
 	width: 255px;
 	top: -38px;
+}
+
+.client-portal a{
+	background: #08BDBD;
+  padding: 10px 30px;
+  position: relative;
+  margin-top: 15px;
+  bottom: -30px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.shift-right-home{
+	float: right;
+	text-align: right;
 }
 .header-inner { overflow: hidden; padding-bottom: 5px; height: 49px; }
 .header-inner.second-row{
@@ -1011,6 +1028,9 @@ div.olrk-state-expanded #habla_window_div { width: 97% !important; }
 	.logo img{
 		top: 10px;
 		width: 200px;
+	}
+	.mobile-only{
+		display:block;
 	}
 	.header-contacts span{
 		display: none;
