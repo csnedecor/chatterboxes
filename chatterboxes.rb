@@ -138,23 +138,6 @@ get '/contact' do
   erb :contact, layout: :application
 end
 
-post '/contact' do
-  if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
-    redirect '/home'
-  elsif presence_valid?(params[:name], params[:message], params[:email], params[:phone])
-    @full_name = "#{params[:name].capitalize}"
-    @phone = params[:phone]
-    @email = params[:email]
-    @message = params[:message]
-
-    send_mail(@full_name, @email, @phone, @message)
-    redirect '/contact?mail=true'
-  else
-    puts 'Email error: blank fields'
-    redirect '/contact'
-  end
-end
-
 get '/services' do
   @therapy_id = params[:therapy_id] || 'none'
   erb :services, layout: :application
@@ -167,25 +150,6 @@ end
 
 get '/started' do
   erb :started, layout: :application
-end
-
-post '/started' do
-  if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
-    redirect '/home'
-  elsif presence_valid?(params[:name], params[:message], params[:email], params[:phone], params[:location])
-    @full_name = "#{params[:name].capitalize}"
-    @phone = params[:phone]
-    @email = params[:email]
-    @message = params[:message]
-    @location = params[:location]
-
-    send_mail(@full_name, @email, @phone, @message, @location)
-    redirect '/started?mail=true'
-  else
-    puts 'Email error: blank fields'
-    redirect '/started'
-  end
-
 end
 
 get '/privacy' do
