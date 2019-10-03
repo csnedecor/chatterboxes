@@ -320,10 +320,23 @@ a.appointment-btn:hover { background: #47b7e9; }
 ========================================================================== */
 .section-schedule { border-top: 2px solid #b3d195; padding: 38px 0 36px; background: url(images/form-pattern.png) 0 0; }
 
-.form-schedule { padding: 13px 28px 25px; border: 1px solid #d2e4ce; border-radius: 4px; background: rgba(255, 255, 255, 0.11); }
+.form-schedule {
+	display: flex;
+	display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 28px 25px;
+  border: 1px solid #d2e4ce;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.11);
+ }
 .form-schedule form { overflow: hidden; margin-bottom: 0; }
 .form-schedule .form-head { margin-bottom: 10px; }
-.form-schedule h3 { font-family: 'Roboto', sans-serif; font-size: 28px; color: #fff; text-transform: uppercase; }
+.form-schedule h3 { margin-right: 20px; font-family: 'Roboto', sans-serif; font-size: 28px; color: #fff; text-transform: uppercase; }
 
 .form-schedule .form-body { float: left; }
 .form-schedule .form-controls { overflow: hidden; }
@@ -345,6 +358,9 @@ a.appointment-btn:hover { background: #47b7e9; }
 .form-schedule .form-btn:hover,
 .form-message .form-btn:hover,
 .form-sign .form-btn:hover { background: #47b7e9; }
+.form-schedule .form-btn{
+	margin: 0 auto;
+}
 
 ::-webkit-input-placeholder { font-family: 'Calibri', sans-serif; font-size: 19px; color: #646464; opacity: 1; }
 :-moz-placeholder { font-family: 'Calibri', sans-serif; font-size: 19px; color: #646464; opacity: 1; }
@@ -721,7 +737,15 @@ ul.mobile-staff{
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
-
+/*======================================================
+Schedule a Visit Modal
+===============================================*/
+#scheduleVisit iframe{
+	width:100%;
+}
+#scheduleVisit{
+	padding: 0;
+}
 /* ==========================================================================
 	#Privacy
 ========================================================================== */
