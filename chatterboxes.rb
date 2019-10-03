@@ -130,41 +130,6 @@ get '/home' do
   erb :home, layout: :application
 end
 
-post '/home' do
-  if params[:appointment_submit]
-    if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
-      redirect '/home'
-    elsif presence_valid?(params[:appointment_name], params[:appointment_email], params[:appointment_phone])
-      @full_name = params[:appointment_name]
-      @phone = params[:appointment_phone]
-      @email = params[:appointment_email]
-      @date = params[:appointment_date]
-      @time = params[:appointment_time]
-      @service = params[:appointment_service]
-
-      send_appointment_request(@full_name, @email, @phone, @date, @time, @service)
-      redirect '/home?mail=true'
-    else
-      puts 'Email error: blank fields'
-      redirect '/home'
-    end
-  else
-    if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
-      redirect '/home'
-    elsif presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
-      @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
-      @phone = params[:phone]
-      @email = params[:email]
-
-      send_mail(@full_name, @email, @phone)
-      redirect '/home?mail=true'
-    else
-      puts 'Email error: blank fields'
-      redirect '/home'
-    end
-  end
-end
-
 get '/about' do
   erb :about, layout: :application
 end
@@ -195,66 +160,10 @@ get '/services' do
   erb :services, layout: :application
 end
 
-post '/services' do
-  if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
-    redirect '/home'
-  elsif presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
-    @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
-    @phone = params[:phone]
-    @email = params[:email]
-    @therapy_type = params[:therapy_type]
-
-    send_mail(@full_name, @email, @phone, @therapy_type)
-    redirect '/services?mail=true'
-  else
-    puts 'Email error: blank fields'
-    redirect '/services'
-  end
-end
-
 get '/ot' do
   @therapy_id = params[:therapy_id] || 'none'
   erb :ot, layout: :application
 end
-
-post '/ot' do
-  if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
-    redirect '/home'
-  elsif presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
-    @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
-    @phone = params[:phone]
-    @email = params[:email]
-    @therapy_type = params[:therapy_type]
-
-    send_mail(@full_name, @email, @phone, @therapy_type)
-    redirect '/ot?mail=true'
-  else
-    puts 'Email error: blank fields'
-    redirect '/ot'
-  end
-end
-
-# get '/teletherapy' do
-#   @therapy_id = params[:therapy_id] || 'none'
-#   erb :teletherapy, layout: :application
-# end
-
-# post '/teletherapy' do
-#   if params[:contact_me_by_fax_only] && params[:contact_me_by_fax_only] == "1"
-#    redirect '/home'
-#   elsif presence_valid?(params[:first_name], params[:last_name], params[:email], params[:phone])
-#     @full_name = "#{params[:first_name].capitalize} #{params[:last_name].capitalize}"
-#     @phone = params[:phone]
-#     @email = params[:email]
-#     @therapy_type = params[:therapy_type]
-
-#     send_mail(@full_name, @email, @phone, @therapy_type)
-#     redirect '/teletherapy?mail=true'
-#   else
-#     puts 'Email error: blank fields'
-#     redirect '/teletherapy'
-#   end
-# end
 
 get '/started' do
   erb :started, layout: :application
