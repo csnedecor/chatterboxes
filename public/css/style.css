@@ -66,6 +66,19 @@ p { margin: 0; }
 
 .row { max-width: 1397px; }
 
+.flex-row{
+	display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.flex-center{
+	justify-content: center;
+	align-items: center;
+	display:flex;
+}
+
 .container { background: url(images/wrapper.png) 0 0; }
 
 /* ==========================================================================
@@ -539,7 +552,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 .contacts .ico-tel,
 .contacts .ico-location { margin-right: 4px; }
 
-.form-message { padding: 39px 50px 0; }
+.form-message { padding: 39px 50px 0; text-align:center; }
 .form-message form { margin-bottom: 0; }
 .form-message .form-head { margin-bottom: 27px; }
 .form-message h3 { font-family: 'Chomp', sans-serif; font-size: 28px; color: #6d6d6d; letter-spacing: 0.2em; }
@@ -570,7 +583,7 @@ textarea[placeholder] { font-family: 'Calibri', sans-serif; font-size: 19px; col
 /* ==========================================================================
 	#Form Sign
 ========================================================================== */
-.form-sign { padding: 42px 42px 23px; margin-top: 9px; background: url(images/form-pattern.png) 0 0; }
+.form-sign { height: 100%; padding: 42px; text-align:center; margin-top: 9px; background: url(images/form-pattern.png) 0 0; }
 .form-sign .form-inner { padding: 0 17px 18px 15px; border: 1px solid #d2e4ce; border-radius: 4px; background: rgba(255, 255, 255, 0.11); }
 .form-sign .form-head { padding-top: 16px; margin-bottom: 13px; }
 .form-sign h3 { font-family: 'Chomp', sans-serif; font-size: 32px; color: #fff; letter-spacing: 0.2em; text-align: center; }

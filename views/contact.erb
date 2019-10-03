@@ -54,94 +54,12 @@
 							</div><!-- /.contacts -->
 						</div><!-- /.medium-6 large-6 columns -->
 
-<!-- 						<div class="medium-4 large-5 columns">
-							<div class="contacts contacts-alt">
-								<div class="contacts-avatar">
-									<img src="css/images/temp/erin_bio.jpg" alt="" /> -->
-								<!-- </div>/.contacts-avatar -->
-<!-- 							</div>
-						</div> -->
-
-<!-- 						<div class="medium-4 large-3 columns">
-							<div class="contacts contacts-alt">
-
-								<div class="contacts-content">
-									<h4>New Patient Coordinator</h4>
-
-									<p>Erin Walsh, M.A.</p>
-
-									<a href="mailto:erin@teamchatterboxes.com" target='_blank'>
-										<i class="ico ico-mail"></i>
-
-										Erin@teamchatterboxes.com
-									</a>
-
-									<div class="socials">
-										<ul>
-											<li>
-												<a href="https://www.facebook.com/TeamChatterboxes?ref=br_rs" class="link-facebook" class="link-facebook">facebook</a>
-											</li>
-
-											<li>
-												<a href="http://chatterboxesblog.blogspot.com/" class="link-rss">rss</a>
-											</li>
-
-											<li>
-												<a href="https://www.linkedin.com/in/erin-walsh-3b14ba142/" class="link-linkedin" target="_blank">linkedin</a>
-											</li>
-										</ul> -->
-									<!-- </div>/.socials -->
-								<!-- </div>/.contacts-content -->
-							<!-- </div>/.contacts contacts-alt -->
-						<!-- </div>/.medium-6 large-6 columns -->
-					<!-- </div>/.row -->
-
 					<div class="row">
 						<div class="medium-12 large-12 columns">
 							<div class="form-message">
-								<form action="/contact" method="post">
-									<header class="form-head">
-										<h3 id='contact-form-header'>Send Us a Message </h3>
-									</header><!-- /.form-head -->
-
-									<div class="form-body">
-										<div class="row">
-											<div class="medium-6 large-6 columns">
-												<div class="form-row">
-													<div class="form-controls">
-														<input type="text" class="field" id="name" placeholder="Name" name="name" required/>
-													</div><!-- /.form-controls -->
-												</div><!-- /.form-row -->
-
-												<div class="form-row">
-													<div class="form-controls">
-														<textarea name="message" id="message" placeholder="Message" cols="30" rows="10" class="textarea" required></textarea>
-													</div><!-- /.form-controls -->
-												</div><!-- /.form-row -->
-											</div><!-- /.medium-6 large-6 columns -->
-
-											<div class="medium-6 large-6 columns">
-												<div class="form-row">
-													<div class="form-controls">
-														<input type="email" class="field" id="mail3" placeholder="Email" name="email" required/>
-													</div><!-- /.form-controls -->
-												</div><!-- /.form-row -->
-
-												<div class="form-row">
-													<div class="form-controls">
-														<input type="tel" class="field" id="mobile" placeholder="Phone" name="phone" required/>
-													</div><!-- /.form-controls -->
-												</div><!-- /.form-row -->
-
-												<input type="checkbox" name="contact_me_by_fax_only" id="contact_me_by_fax_only" style="display:none!important;"value="1" tabindex="-1" autocomplete="off">
-
-												<div class="form-actions">
-													<input type="submit" value="Submit" class="form-btn" />
-												</div><!-- /.form-actions -->
-											</div><!-- /.medium-6 large-6 columns -->
-										</div><!-- /.row -->
-									</div><!-- /.form-body -->
-								</form>
+					      <p>
+                  <a href="#" data-reveal-id="scheduleVisit" class="form-btn">Send us a message</a>
+                </p>
 							</div><!-- /.form-message -->
 						</div><!-- /.medium-12 large-12 columns -->
 					</div><!-- /.row -->
@@ -163,6 +81,11 @@
 	html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
 	</style>
 	<div>
+<!-- SCHEDULE A VISIT MODAL -->
+<div id="scheduleVisit" class="reveal-modal" data-reveal aria-labelledby="scheduleVisit" aria-hidden="true" role="dialog">
+  <iframe src="https://forms.monday.com/forms/embed/277e835655da23285064acac0d53364d" width="650" height="500" style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);"></iframe>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
 
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>">
 
