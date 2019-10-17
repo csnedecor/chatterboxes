@@ -194,6 +194,10 @@ get '/about/kate' do
   erb :"about/kate", layout: :application
 end
 
+get '/about/brittany' do
+  erb :"about/brittany", layout: :application
+end
+
 get '/about/rebekah' do
   erb :"about/rebekah", layout: :application
 end
