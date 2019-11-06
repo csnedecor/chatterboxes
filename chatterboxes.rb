@@ -162,10 +162,6 @@ get '/about/megan' do
   erb :"about/megan", layout: :application
 end
 
-get '/about/alexandra' do
-  erb :"about/alexandra", layout: :application
-end
-
 get '/about/katie' do
   erb :"about/katie", layout: :application
 end
@@ -182,12 +178,9 @@ get '/about/annemarie' do
   erb :"about/annemarie", layout: :application
 end
 
-get '/about/anya' do
-  erb :"about/anya", layout: :application
-end
 
-get '/about/christine' do
-  erb :"about/christine", layout: :application
+get '/about/laura' do
+  erb :"about/laura", layout: :application
 end
 
 get '/about/kate' do

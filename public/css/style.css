@@ -729,7 +729,7 @@ ul.mobile-staff{
 .section-office h2 { margin-bottom: 15px; }
 .section-office .section-body { min-height: 585px; }
 
-.slider-office { position: relative; display: inline-block; width: 80%; }
+.slider-office { position: relative; display: inline-block; width: 48%; }
 .slider-office .slides { list-style: none outside none; }
 .slider-office .slide { float: left; }
 .slider-office .slide img { border: 2px solid black; margin-left: auto; margin-right: auto; max-width: auto!important;  }
