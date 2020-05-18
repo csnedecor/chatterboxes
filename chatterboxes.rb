@@ -113,7 +113,8 @@ def presence_valid?(*params)
 end
 
 get '/' do
-  redirect '/home'
+  # redirect '/home'
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 post '/mailchimp' do
@@ -127,74 +128,91 @@ post '/mailchimp' do
 end
 
 get '/home' do
-  erb :home, layout: :application
+  # erb :home, layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/about' do
-  erb :about, layout: :application
+  # erb :about, layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/contact' do
-  erb :contact, layout: :application
+  # erb :contact, layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/services' do
-  @therapy_id = params[:therapy_id] || 'none'
-  erb :services, layout: :application
+  # @therapy_id = params[:therapy_id] || 'none'
+  # erb :services, layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/ot' do
-  @therapy_id = params[:therapy_id] || 'none'
-  erb :ot, layout: :application
+  # @therapy_id = params[:therapy_id] || 'none'
+  # erb :ot, layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/started' do
-  erb :started, layout: :application
+  # erb :started, layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/privacy' do
-  erb :privacy, layout: :application
+  # erb :privacy, layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 
 # Staff Bio pages
 get '/about/megan' do
-  erb :"about/megan", layout: :application
+  # erb :"about/megan", layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/about/katie' do
-  erb :"about/katie", layout: :application
+  # erb :"about/katie", layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/about/caroline' do
-  erb :"about/caroline", layout: :application
+  # erb :"about/caroline", layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/about/abby' do
-  erb :"about/abby", layout: :application
+  # erb :"about/abby", layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/about/annemarie' do
-  erb :"about/annemarie", layout: :application
+  # erb :"about/annemarie", layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 
 get '/about/laura' do
-  erb :"about/laura", layout: :application
+  # erb :"about/laura", layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/about/kate' do
-  erb :"about/kate", layout: :application
+  # erb :"about/kate", layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/about/brittany' do
-  erb :"about/brittany", layout: :application
+  # erb :"about/brittany", layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/about/rebekah' do
-  erb :"about/rebekah", layout: :application
+  # erb :"about/rebekah", layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
 
 get '/about/stephanie' do
-  erb :"about/stephanie", layout: :application
+  # erb :"about/stephanie", layout: :application
+  redirect 'https://telehealth.teamchatterboxes.com', 301
 end
